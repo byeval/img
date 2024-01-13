@@ -7,5 +7,5 @@ export default function OldLinksStatsPage({
     key: string;
   };
 }) {
-  redirect(`/analytics?domain=dub.sh&key=${params.key}`);
+  redirect(`/analytics?domain=img.pt&key=${params.key}`);
 }

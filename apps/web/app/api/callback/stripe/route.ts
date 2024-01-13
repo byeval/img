@@ -250,10 +250,10 @@ export const POST = async (req: Request) => {
             mention: true,
           }),
           resend.emails.send({
-            from: "Steven from Dub.co <steven@dub.co>",
+            from: "Steven from img.pt <steven@img.pt>",
             to: projectUsers,
-            subject: "Feedback on your Dub.co experience?",
-            text: "Hey!\n\nI noticed you recently cancelled your Dub.co subscription – we're sorry to see you go!\n\nI'd love to hear your feedback on your experience with Dub – what could we have done better?\n\nThanks!\n\nSteven Tey\nFounder, Dub.co",
+            subject: "Feedback on your img.pt experience?",
+            text: "Hey!\n\nI noticed you recently cancelled your img.pt subscription – we're sorry to see you go!\n\nI'd love to hear your feedback on your experience with Dub – what could we have done better?\n\nThanks!\n\nSteven Tey\nFounder, img.pt",
           }),
         ]);
       }

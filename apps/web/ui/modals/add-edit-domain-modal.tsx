@@ -251,7 +251,7 @@ function AddEditDomainModal({
                 Domain is already in use.{" "}
                 <a
                   className="underline"
-                  href="mailto:support@dub.co?subject=My Domain Is Already In Use"
+                  href="mailto:support@img.pt?subject=My Domain Is Already In Use"
                 >
                   Contact us
                 </a>{" "}
@@ -340,7 +340,7 @@ function AddEditDomainModal({
               name="placeholder"
               id="placeholder"
               className="block w-full rounded-md border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm"
-              placeholder="https://dub.co/help/article/what-is-dub"
+              placeholder="https://img.pt/help/article/what-is-dub"
               value={placeholder}
               onChange={(e) =>
                 setData({ ...data, placeholder: e.target.value })

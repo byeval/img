@@ -82,7 +82,7 @@ export const POST = withAuth(
       });
     }
 
-    if (link.domain === "dub.sh") {
+    if (link.domain === "img.pt") {
       await qstash.publishJSON({
         url: `${APP_DOMAIN_WITH_NGROK}/api/cron/verify`,
         body: {

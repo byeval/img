@@ -409,7 +409,7 @@ function AddEditLinkModal({
                     placeholder={
                       domains?.find(({ slug }) => slug === domain)
                         ?.placeholder ||
-                      "https://dub.co/help/article/what-is-dub"
+                      "https://img.pt/help/article/what-is-dub"
                     }
                     value={url}
                     autoFocus={!key}
@@ -537,7 +537,7 @@ function AddEditLinkModal({
                   </p>
                 ) : process.env.NEXT_PUBLIC_IS_DUB &&
                   isDubDomain(domain) &&
-                  domain !== "dub.sh" ? (
+                  domain !== "img.pt" ? (
                   <p className="mt-2 text-sm text-gray-500">
                     You can only create up to 25 links with this domain.
                   </p>

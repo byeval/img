@@ -1,4 +1,4 @@
-# Dub.co Tinybird Setup
+# img.pt Tinybird Setup
 
 ```bash
 ├── datasources

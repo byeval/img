@@ -21,7 +21,7 @@ export function cn(...inputs: ClassValue[]) {
 export function constructMetadata({
   title = `${process.env.NEXT_PUBLIC_APP_NAME} - Link Management for Modern Marketing Teams`,
   description = `${process.env.NEXT_PUBLIC_APP_NAME} is the open-source link management infrastructure for modern marketing teams to create, share, and track short links.`,
-  image = "https://dub.co/_static/thumbnail.png",
+  image = "https://img.pt/_static/thumbnail.png",
   icons = [
     {
       rel: "apple-touch-icon",
@@ -155,7 +155,7 @@ export const chunk = <T>(array: T[], chunk_size: number): T[][] => {
 };
 
 export function linkConstructor({
-  domain = "dub.sh",
+  domain = "img.pt",
   key,
   localhost,
   pretty,
@@ -322,7 +322,7 @@ export const getApexDomain = (url: string) => {
     // otherwise, it's a subdomain (e.g. dub.vercel.app), so we return the last 2 parts
     return parts.slice(-2).join(".");
   }
-  // if it's a normal domain (e.g. dub.co), we return the domain
+  // if it's a normal domain (e.g. img.pt), we return the domain
   return domain;
 };
 

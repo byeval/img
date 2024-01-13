@@ -66,7 +66,7 @@ export const PUT = withAuth(
         updatedLink: processedLink,
       }),
       ...(link &&
-      processedLink.domain === "dub.sh" &&
+      processedLink.domain === "img.pt" &&
       processedLink.url !== link.url
         ? [
             qstash.publishJSON({

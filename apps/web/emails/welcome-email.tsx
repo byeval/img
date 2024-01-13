@@ -57,16 +57,16 @@ export default function WelcomeEmail({
             <Text className="ml-1 text-sm leading-4 text-black">
               ◆ Create a{" "}
               <Link
-                href="https://app.dub.co/links"
+                href="https://app.img.pt/links"
                 className="font-medium text-blue-600 no-underline"
               >
-                Dub.sh short link
+                Img.pt short link
               </Link>
             </Text>
             <Text className="ml-1 text-sm leading-4 text-black">
               ◆ Create a{" "}
               <Link
-                href="https://app.dub.co"
+                href="https://app.img.pt"
                 className="font-medium text-blue-600 no-underline"
               >
                 new project

@@ -18,7 +18,7 @@ import punycode from "punycode/";
 export default function LinkPreviewTooltip({
   link,
 }: {
-  // link is in the format dub.sh/github
+  // link is in the format img.pt/github
   link: string;
 }) {
   const domain = link.split("/")[0];

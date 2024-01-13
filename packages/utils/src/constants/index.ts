@@ -34,7 +34,7 @@ export const FADE_IN_ANIMATION_SETTINGS = {
 export const PAGINATION_LIMIT = 100;
 
 export const SHORT_DOMAIN =
-  process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "dub.sh";
+  process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "img.pt";
 
 export const HOME_DOMAIN = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`;
 
@@ -78,23 +78,23 @@ export const ADMIN_HOSTNAMES = new Set([
 ]);
 
 export const DEFAULT_REDIRECTS = {
-  home: "https://dub.co",
-  dub: "https://dub.co",
-  signin: "https://app.dub.co/login",
-  login: "https://app.dub.co/login",
-  register: "https://app.dub.co/register",
-  signup: "https://app.dub.co/register",
-  app: "https://app.dub.co",
-  dashboard: "https://app.dub.co",
-  links: "https://app.dub.co/links",
-  settings: "https://app.dub.co/settings",
-  welcome: "https://app.dub.co/welcome",
+  home: "https://img.pt",
+  dub: "https://img.pt",
+  signin: "https://app.img.pt/login",
+  login: "https://app.img.pt/login",
+  register: "https://app.img.pt/register",
+  signup: "https://app.img.pt/register",
+  app: "https://app.img.pt",
+  dashboard: "https://app.img.pt",
+  links: "https://app.img.pt/links",
+  settings: "https://app.img.pt/settings",
+  welcome: "https://app.img.pt/welcome",
   discord: "https://twitter.com/dubdotco", // placeholder for now
 };
 
 export const DUB_HEADERS = {
   headers: {
-    "x-powered-by": "Dub.co - Link management for modern marketing teams",
+    "x-powered-by": "img.pt - Link management for modern marketing teams",
   },
 };
 
@@ -120,7 +120,7 @@ export const DUB_DOMAINS = [
     primary: true,
     target: `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
     type: "redirect",
-    placeholder: "https://dub.co/help/article/what-is-dub",
+    placeholder: "https://img.pt/help/article/what-is-dub",
     clicks: 0,
     allowedHostnames: [],
   },
@@ -130,7 +130,7 @@ export const DUB_DOMAINS = [
           slug: "chatg.pt",
           verified: true,
           primary: false,
-          target: "https://dub.co/tools/chatgpt-link-shortener",
+          target: "https://img.pt/tools/chatgpt-link-shortener",
           type: "redirect",
           placeholder: "https://chat.openai.com/g/g-UGjKKONEe-domainsgpt",
           clicks: 0,
@@ -140,7 +140,7 @@ export const DUB_DOMAINS = [
           slug: "amzn.id",
           verified: true,
           primary: false,
-          target: "https://dub.co/tools/amazon-link-shortener",
+          target: "https://img.pt/tools/amazon-link-shortener",
           type: "redirect",
           placeholder: "https://www.amazon.com/dp/B0BW4SWNC8",
           clicks: 0,
@@ -150,7 +150,7 @@ export const DUB_DOMAINS = [
           slug: "spti.fi",
           verified: true,
           primary: false,
-          target: "https://dub.co/tools/spotify-link-shortener",
+          target: "https://img.pt/tools/spotify-link-shortener",
           type: "redirect",
           placeholder: "https://open.spotify.com/album/1SCyi9a5pOasikidToUY5y",
           clicks: 0,

@@ -33,10 +33,10 @@ const navigation = {
 };
 
 export function Footer() {
-  const { domain = "dub.co" } = useParams() as { domain: string };
+  const { domain = "img.pt" } = useParams() as { domain: string };
 
   const createHref = (href: string) =>
-    domain === "dub.co" ? href : `https://dub.co${href}`;
+    domain === "img.pt" ? href : `https://img.pt${href}`;
 
   return (
     <footer className="z-10 border-t border-gray-200 bg-white/50 py-8 backdrop-blur-lg">
@@ -45,7 +45,7 @@ export function Footer() {
           <div className="space-y-8">
             <Link
               href={createHref("/")}
-              {...(domain !== "dub.co" && {
+              {...(domain !== "img.pt" && {
                 onClick: () => {
                   va.track("Referred from custom domain", {
                     domain,
@@ -106,7 +106,7 @@ export function Footer() {
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        {...(domain !== "dub.co" && {
+                        {...(domain !== "img.pt" && {
                           onClick: () => {
                             va.track("Referred from custom domain", {
                               domain,
@@ -129,7 +129,7 @@ export function Footer() {
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        {...(domain !== "dub.co" && {
+                        {...(domain !== "img.pt" && {
                           onClick: () => {
                             va.track("Referred from custom domain", {
                               domain,
@@ -154,7 +154,7 @@ export function Footer() {
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        {...(domain !== "dub.co" && {
+                        {...(domain !== "img.pt" && {
                           onClick: () => {
                             va.track("Referred from custom domain", {
                               domain,
@@ -178,7 +178,7 @@ export function Footer() {
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        {...(domain !== "dub.co" && {
+                        {...(domain !== "img.pt" && {
                           onClick: () => {
                             va.track("Referred from custom domain", {
                               domain,

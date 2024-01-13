@@ -61,7 +61,7 @@ export default function ModalProvider({ children }: { children: ReactNode }) {
   const params = useParams() as { slug?: string };
 
   const [hashes, setHashes] = useCookies<SimpleLinkProps[]>("hashes__dub", [], {
-    domain: !!process.env.NEXT_PUBLIC_VERCEL_URL ? ".dub.co" : undefined,
+    domain: !!process.env.NEXT_PUBLIC_VERCEL_URL ? ".img.pt" : undefined,
   });
 
   useEffect(() => {

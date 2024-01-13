@@ -2,9 +2,9 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Dub.co App",
-    short_name: "Dub.co",
-    description: "Dub.co – the open-source link management infrastructure.",
+    name: "img.pt App",
+    short_name: "img.pt",
+    description: "img.pt – the open-source link management infrastructure.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

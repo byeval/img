@@ -176,8 +176,8 @@ export async function getRandomKey(domain: string): Promise<string> {
 }
 
 export async function checkIfKeyExists(domain: string, key: string) {
-  // reserved keys for dub.sh
-  if (domain === "dub.sh") {
+  // reserved keys for img.pt
+  if (domain === "img.pt") {
     if ((await isReservedKey(key)) || DEFAULT_REDIRECTS[key]) {
       return true;
     }
@@ -287,7 +287,7 @@ export async function processLink({
         status: 403,
       };
     }
-    // internal Dub.co checks
+    // internal img.pt checks
   } else if (process.env.NEXT_PUBLIC_IS_DUB) {
     // if it's not a custom project, do some filtering
     if (key?.includes("/")) {
@@ -305,7 +305,7 @@ export async function processLink({
         status: 403,
       };
     }
-    if (domain === "dub.sh") {
+    if (domain === "img.pt") {
       const keyBlacklisted = await isBlacklistedKey(key);
       if (keyBlacklisted) {
         return {
@@ -714,7 +714,7 @@ export async function archiveLink(
   });
 }
 
-/* Delete all dub.sh links associated with a user when it's deleted */
+/* Delete all img.pt links associated with a user when it's deleted */
 export async function deleteUserLinks(userId: string) {
   const links = await prisma.link.findMany({
     where: {
@@ -728,7 +728,7 @@ export async function deleteUserLinks(userId: string) {
   });
   const pipeline = redis.pipeline();
   links.forEach(({ key }) => {
-    pipeline.del(`dub.sh:${key}`);
+    pipeline.del(`img.pt:${key}`);
   });
   const [deleteRedis, deleteCloudinary, deletePrisma] =
     await Promise.allSettled([
@@ -736,7 +736,7 @@ export async function deleteUserLinks(userId: string) {
       // remove all images from cloudinary
       ...links.map(({ key, proxy }) =>
         proxy
-          ? cloudinary.v2.uploader.destroy(`dub.sh/${key}`, {
+          ? cloudinary.v2.uploader.destroy(`img.pt/${key}`, {
               invalidate: true,
             })
           : Promise.resolve(),

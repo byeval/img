@@ -42,13 +42,13 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
     return ApiMiddleware(req);
   }
 
-  // for public stats pages (e.g. dub.co/stats/github)
+  // for public stats pages (e.g. img.pt/stats/github)
   if (key === "stats") {
     return NextResponse.rewrite(new URL(`/${domain}${path}`, req.url));
   }
 
-  // default redirects for dub.sh
-  if (domain === "dub.sh" && DEFAULT_REDIRECTS[key]) {
+  // default redirects for img.pt
+  if (domain === "img.pt" && DEFAULT_REDIRECTS[key]) {
     return NextResponse.redirect(DEFAULT_REDIRECTS[key]);
   }
 
@@ -57,7 +57,7 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
     return AdminMiddleware(req);
   }
 
-  // for root pages (e.g. dub.sh, chatg.pt, etc.)
+  // for root pages (e.g. img.pt, chatg.pt, etc.)
   if (key.length === 0) {
     return RootMiddleware(req, ev);
   }

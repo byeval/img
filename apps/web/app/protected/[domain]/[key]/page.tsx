@@ -7,7 +7,7 @@ import { notFound, redirect } from "next/navigation";
 const title = "Password Required";
 const description =
   "This link is password protected. Please enter the password to view it.";
-const image = "https://dub.co/_static/password-protected.png";
+const image = "https://img.pt/_static/password-protected.png";
 
 export async function generateMetadata({
   params,
@@ -39,7 +39,7 @@ export async function generateMetadata({
   }
 
   return constructMetadata({
-    title: isDubDomain(domain) || link.project?.plan === "free" ? `${title} - Dub.co` : title,
+    title: isDubDomain(domain) || link.project?.plan === "free" ? `${title} - img.pt` : title,
     description,
     image,
     ...(!isDubDomain(domain) &&
@@ -122,7 +122,7 @@ export default async function PasswordProtectedLinkPage({
               className="h-10 w-10 rounded-full"
             />
           ) : (
-            <a href="https://dub.co" target="_blank" rel="noreferrer">
+            <a href="https://img.pt" target="_blank" rel="noreferrer">
               <Logo />
             </a>
           )}
