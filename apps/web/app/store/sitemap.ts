@@ -1,8 +1,6 @@
 import prisma from "@/lib/prisma";
 import { MetadataRoute } from "next";
 
-export const runtime = "edge";
-
 // Google's limit is 50,000 URLs per sitemap
 const URLS_PER_SITEMAP = 50000;
 
