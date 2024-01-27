@@ -14,38 +14,26 @@ import { useContext, useMemo } from "react";
 export default function NavTabs() {
   const pathname = usePathname();
   const { slug } = useParams() as { slug?: string };
-  const searchParams = useSearchParams();
+  const domain = useSearchParams()?.get("domain");
   const { loading, error } = useProject();
 
-  const tabs = useMemo(() => {
-    if (slug) {
-      return [
-        { name: "Links", href: `/${slug}` },
-        { name: "Analytics", href: `/${slug}/analytics` },
-        { name: "Domains", href: `/${slug}/domains` },
-        { name: "Settings", href: `/${slug}/settings` },
-      ];
-    }
-    if (pathname === "/analytics") {
-      return [{ name: "← Back to all links", href: "/links" }];
-    }
-    return [
-      { name: "Projects", href: "/" },
-      { name: "Links", href: "/links" },
-      { name: "Settings", href: "/settings" },
-    ];
-  }, [pathname, slug, searchParams]);
+  const tabs = [
+    { name: "Links", href: `/${slug}` },
+    { name: "Analytics", href: `/${slug}/analytics` },
+    { name: "Domains", href: `/${slug}/domains` },
+    { name: "Settings", href: `/${slug}/settings` },
+  ];
 
   const { verified, loading: loadingDomains } = useDomains();
   const { data: count } = useLinksCount();
 
-  if (error) return null;
+  if (!slug || error) return null;
 
   return (
     <div className="scrollbar-hide mb-[-3px] flex h-12 items-center justify-start space-x-2 overflow-x-auto">
       {tabs.map(({ name, href }) => (
-        <Link key={href} href={href} className="relative p-1">
-          <div className="rounded-md px-3 py-2 transition-all duration-75 hover:bg-gray-100 active:bg-gray-200">
+        <Link key={href} href={href} className="relative">
+          <div className="m-1 rounded-md px-3 py-2 transition-all duration-75 hover:bg-gray-100 active:bg-gray-200">
             <p className="text-sm text-gray-600 hover:text-black">{name}</p>
           </div>
           {(pathname === href ||
@@ -55,8 +43,10 @@ export default function NavTabs() {
               transition={{
                 duration: 0.25,
               }}
-              className="absolute bottom-0 h-0.5 w-full bg-black"
-            />
+              className="absolute bottom-0 w-full px-1.5"
+            >
+              <div className="h-0.5 bg-black" />
+            </motion.div>
           )}
         </Link>
       ))}
@@ -64,6 +54,7 @@ export default function NavTabs() {
         !loading &&
         !error &&
         !loadingDomains &&
+        !domain &&
         (!verified || count === 0) && <OnboardingChecklist />}
     </div>
   );

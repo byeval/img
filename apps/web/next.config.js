@@ -96,4 +96,12 @@ module.exports = {
   async redirects() {
     return [];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/store',
+        destination: 'https://pickedgpt.com',
+      }
+    ]
+  },
 };
