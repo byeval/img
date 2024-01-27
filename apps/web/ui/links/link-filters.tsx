@@ -1,4 +1,3 @@
-import useDomains from "@/lib/swr/use-domains";
 import useLinks from "@/lib/swr/use-links";
 import useLinksCount from "@/lib/swr/use-links-count";
 import useTags from "@/lib/swr/use-tags";
@@ -9,7 +8,6 @@ import {
   IconMenu,
   LoadingCircle,
   LoadingSpinner,
-  NumberTooltip,
   Popover,
   Switch,
   useRouterStuff,
@@ -17,18 +15,15 @@ import {
 import {
   SWIPE_REVEAL_ANIMATION_SETTINGS,
   nFormatter,
-  truncate,
 } from "@dub/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronRight, Search, Trash, XCircle } from "lucide-react";
-import { useSession } from "next-auth/react";
 import {
   useParams,
   usePathname,
   useRouter,
   useSearchParams,
 } from "next/navigation";
-import punycode from "punycode/";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { mutate } from "swr";
@@ -74,11 +69,9 @@ export default function LinkFilters() {
         </div>
         <SearchBox searchInputRef={searchInputRef} />
       </div>
-      <DomainsFilter />
       {tags && tagsCount && (
         <>
           <TagsFilter tags={tags} tagsCount={tagsCount} />
-          <MyLinksFilter />
           <ArchiveFilter />
         </>
       )}
@@ -162,90 +155,6 @@ const SearchBox = ({ searchInputRef }) => {
         }}
       />
     </div>
-  );
-};
-
-const DomainsFilter = () => {
-  const searchParams = useSearchParams();
-  const { queryParams } = useRouterStuff();
-  const { data: domains } = useLinksCount({ groupBy: "domain" });
-  const { primaryDomain } = useDomains();
-
-  const [collapsed, setCollapsed] = useState(false);
-
-  const options = useMemo(() => {
-    return domains?.length === 0
-      ? [
-          {
-            value: primaryDomain,
-            count: 0,
-          },
-        ]
-      : domains?.map(({ domain, _count }) => ({
-          value: domain,
-          count: _count,
-        }));
-  }, [domains, primaryDomain]);
-
-  return (
-    <fieldset className="overflow-hidden py-6">
-      <div className="flex h-8 items-center justify-between">
-        <button
-          onClick={() => {
-            setCollapsed(!collapsed);
-          }}
-          className="flex items-center space-x-2"
-        >
-          <ChevronRight
-            className={`${collapsed ? "" : "rotate-90"} h-5 w-5 transition-all`}
-          />
-          <h4 className="font-medium text-gray-900">Domains</h4>
-        </button>
-      </div>
-      <AnimatePresence initial={false}>
-        {!collapsed && (
-          <motion.div
-            className="mt-4 grid gap-2"
-            {...SWIPE_REVEAL_ANIMATION_SETTINGS}
-          >
-            {options?.map(({ value, count }) => (
-              <div
-                key={value}
-                className="relative flex cursor-pointer items-center space-x-3 rounded-md bg-gray-50 transition-all hover:bg-gray-100"
-              >
-                <input
-                  id={value}
-                  name={value}
-                  checked={
-                    searchParams?.get("domain") === value ||
-                    domains?.length <= 1
-                  }
-                  onChange={() => {
-                    queryParams({
-                      set: {
-                        domain: value,
-                      },
-                      del: "page",
-                    });
-                  }}
-                  type="radio"
-                  className="ml-3 h-4 w-4 cursor-pointer rounded-full border-gray-300 text-black focus:outline-none focus:ring-0"
-                />
-                <label
-                  htmlFor={value}
-                  className="flex w-full cursor-pointer justify-between px-3 py-2 pl-0 text-sm font-medium text-gray-700"
-                >
-                  <p>{truncate(punycode.toUnicode(value || ""), 24)}</p>
-                  <NumberTooltip value={count} unit="links">
-                    <p className="text-gray-500">{nFormatter(count)}</p>
-                  </NumberTooltip>
-                </label>
-              </div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </fieldset>
   );
 };
 
@@ -505,36 +414,6 @@ const TagPopover = ({ tag, count }: { tag: TagProps; count: number }) => {
         </p>
       </button>
     </Popover>
-  );
-};
-
-const MyLinksFilter = () => {
-  const searchParams = useSearchParams();
-  const { queryParams } = useRouterStuff();
-  const userId = searchParams?.get("userId");
-  const { data: session } = useSession();
-
-  return (
-    <div className="flex items-center justify-between py-6">
-      <label className="text-sm font-medium text-gray-600">
-        Show my links only
-      </label>
-      <Switch
-        fn={() =>
-          queryParams(
-            userId
-              ? { del: "userId" }
-              : {
-                  set: {
-                    // @ts-ignore
-                    userId: session?.user?.id,
-                  },
-                },
-          )
-        }
-        checked={userId ? true : false}
-      />
-    </div>
   );
 };
 

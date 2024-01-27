@@ -24,7 +24,7 @@ export default function WelcomeEmail({
   return (
     <Html>
       <Head />
-      <Preview>Welcome to Dub</Preview>
+      <Preview>Welcome to img.pt</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
@@ -38,7 +38,7 @@ export default function WelcomeEmail({
               />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-center text-xl font-semibold text-black">
-              Welcome to Dub
+              Welcome to img.pt
             </Heading>
             <Section className="my-8">
               <Img src={DUB_THUMBNAIL} alt="Dub" className="max-w-[500px]" />

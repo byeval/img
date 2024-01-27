@@ -45,8 +45,7 @@ export const HOME_DOMAIN = `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`;
 export const APP_HOSTNAMES = new Set([
   `app.${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
   `preview.${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
-  "localhost:8888",
-  "localhost",
+  "app.localhost:8888",
 ]);
 
 export const APP_DOMAIN =
@@ -135,55 +134,9 @@ export const DUB_DOMAINS = [
     allowedHostnames: [],
     projectId: DUB_PROJECT_ID,
   },
-  ...(process.env.NEXT_PUBLIC_IS_DUB
-    ? [
-        {
-          id: "clce1z7cs00y8rbstk4xtnj0k",
-          slug: "chatg.pt",
-          verified: true,
-          primary: false,
-          archived: false,
-          target: "https://dub.co/tools/chatgpt-link-shortener",
-          type: "redirect",
-          placeholder: "https://chat.openai.com/g/g-UGjKKONEe-domainsgpt",
-          clicks: 0,
-          allowedHostnames: ["chat.openai.com"],
-          projectId: DUB_PROJECT_ID,
-        },
-        {
-          id: "cloxw8qtk000bjt08n9b812vs",
-          slug: "amzn.id",
-          verified: true,
-          primary: false,
-          archived: false,
-          target: "https://dub.co/tools/amazon-link-shortener",
-          type: "redirect",
-          placeholder: "https://www.amazon.com/dp/B0BW4SWNC8",
-          clicks: 0,
-          allowedHostnames: ["amazon.com", "amazon.co.uk", "amazon.ca"],
-          projectId: DUB_PROJECT_ID,
-        },
-        {
-          id: "cloxw8y2u0003js08a7mqg1j8",
-          slug: "spti.fi",
-          verified: true,
-          primary: false,
-          archived: false,
-          target: "https://dub.co/tools/spotify-link-shortener",
-          type: "redirect",
-          placeholder: "https://open.spotify.com/album/1SCyi9a5pOasikidToUY5y",
-          clicks: 0,
-          allowedHostnames: ["open.spotify.com"],
-          projectId: DUB_PROJECT_ID,
-        },
-      ]
-    : []),
 ];
 
 export const ALL_TOOLS = [
-  { name: "ChatGPT Link Shortener", slug: "chatgpt-link-shortener" },
-  { name: "Amazon Link Shortener", slug: "amazon-link-shortener" },
-  { name: "Spotify Link Shortener", slug: "spotify-link-shortener" },
   { name: "Metatags API", slug: "metatags" },
   { name: "QR Code Generator", slug: "qr-code" },
   { name: "Link Inspector", slug: "inspector" },

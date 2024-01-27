@@ -7,7 +7,7 @@ import { createHash } from "crypto";
 import { API_DOMAIN, getSearchParams, isDubDomain } from "@dub/utils";
 import { ratelimit } from "../upstash";
 import { exceededLimitError } from "../api/errors";
-import { isAdmin } from "app/admin.dub.co/actions";
+import { isAdmin } from "app/admin.img.pt/actions";
 
 export interface Session {
   user: {

@@ -31,6 +31,7 @@ export const config = {
 
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
   const { domain, path, key } = parse(req);
+  console.log(123, domain, path, key);
 
   // for App
   if (APP_HOSTNAMES.has(domain)) {
@@ -50,6 +51,11 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
   // default redirects for img.pt
   if (domain === "img.pt" && DEFAULT_REDIRECTS[key]) {
     return NextResponse.redirect(DEFAULT_REDIRECTS[key]);
+  }
+
+  // for gpt store pages
+  if (key === "store") {
+    return NextResponse.next();
   }
 
   // for Admin

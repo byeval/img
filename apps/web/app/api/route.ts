@@ -9,7 +9,7 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
     info: {
       title: "img.pt API",
       description:
-        "Dub is an open-source link management tool for modern marketing teams to create, share, and track short links.",
+        "Img.pt is an open-source link management tool for modern marketing teams to create, share, and track short links.",
       contact: {
         email: "support@img.pt",
         name: "img.pt Support",
@@ -45,18 +45,6 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
               schema: {
                 description:
                   "The slug for the project to retrieve links for. E.g. for app.img.pt/acme, the projectSlug is 'acme'.",
-                type: "string",
-              },
-            },
-            {
-              name: "domain",
-              description:
-                "The domain to filter the links by. E.g. 'ac.me'. If not provided, all links for the project will be returned.",
-              in: "query",
-              required: false,
-              schema: {
-                description:
-                  "The domain to filter the links by. E.g. 'ac.me'. If not provided, all links for the project will be returned.",
                 type: "string",
               },
             },

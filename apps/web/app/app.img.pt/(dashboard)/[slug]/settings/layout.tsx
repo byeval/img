@@ -16,10 +16,6 @@ export default function ProjectSettingsLayout({
       segment: "billing",
     },
     {
-      name: "People",
-      segment: "people",
-    },
-    {
       name: "Security",
       segment: "security",
     },

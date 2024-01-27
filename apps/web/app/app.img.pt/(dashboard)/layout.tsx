@@ -25,10 +25,18 @@ export default function Layout({ children }: { children: ReactNode }) {
                   <Logo className="h-8 w-8 transition-all duration-75 active:scale-95" />
                 </Link>
                 <Divider className="h-8 w-8 text-gray-200 sm:ml-3" />
-                <ProjectSelect />
-                <UpgradeBanner />
+                <div>Links</div>
+                {/* <ProjectSelect /> */}
+                {/* <UpgradeBanner /> */}
               </div>
               <div className="flex items-center space-x-6">
+                <a
+                  href={`${HOME_DOMAIN}/store`}
+                  className="hidden text-sm text-gray-500 transition-colors hover:text-gray-700 sm:block"
+                  target="_blank"
+                >
+                  GPTStore
+                </a>
                 <a
                   href={`${HOME_DOMAIN}/changelog`}
                   className="hidden text-sm text-gray-500 transition-colors hover:text-gray-700 sm:block"

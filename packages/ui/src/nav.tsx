@@ -14,25 +14,21 @@ import { MaxWidthWrapper } from "./max-width-wrapper";
 
 export const navItems = [
   {
-    name: "Customers",
-    slug: "customers",
-  },
-  {
     name: "Pricing",
     slug: "pricing",
   },
   {
-    name: "Enterprise",
-    slug: "enterprise",
+    name: "Store",
+    slug: "store",
   },
   {
     name: "Blog",
     slug: "blog",
   },
-  {
-    name: "Changelog",
-    slug: "changelog",
-  },
+  // {
+  //   name: "Changelog",
+  //   slug: "changelog",
+  // },
 ];
 
 export function Nav() {

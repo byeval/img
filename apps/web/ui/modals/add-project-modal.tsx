@@ -4,14 +4,9 @@ import {
   InfoTooltip,
   Logo,
   Modal,
-  Switch,
   useRouterStuff,
 } from "@dub/ui";
-import {
-  FADE_IN_ANIMATION_SETTINGS,
-  HOME_DOMAIN,
-  generateDomainFromName,
-} from "@dub/utils";
+import { HOME_DOMAIN, generateDomainFromName } from "@dub/utils";
 import slugify from "@sindresorhus/slugify";
 import va from "@vercel/analytics";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -27,8 +22,6 @@ import {
 import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
 import { mutate } from "swr";
-import { motion } from "framer-motion";
-import DomainInput from "./add-edit-domain-modal/domain-input";
 
 function AddProjectModalHelper({
   showAddProjectModal,
@@ -231,49 +224,6 @@ function AddProjectModalHelper({
             <p className="mt-2 text-sm text-red-600" id="slug-error">
               {slugError}
             </p>
-          )}
-        </div>
-
-        <div>
-          <div className="flex items-center justify-between">
-            <label htmlFor="domain" className="flex items-center space-x-2">
-              <p className="block text-sm font-medium text-gray-700">
-                Custom Domain
-              </p>
-              <InfoTooltip content="This is the domain that your short links will be hosted on. E.g. yourbrand.com/link" />
-            </label>
-            <Switch
-              fn={() => {
-                if (welcomeFlow) {
-                  if (useDefaultDomain) {
-                    queryParams({
-                      del: ["useDefaultDomain"],
-                      replace: true,
-                    });
-                  } else {
-                    queryParams({
-                      set: {
-                        useDefaultDomain: "true",
-                      },
-                      replace: true,
-                    });
-                  }
-                } else {
-                  setUseDefaultDomain(!useDefaultDomain);
-                }
-              }}
-              checked={!useDefaultDomain}
-            />
-          </div>
-          {!useDefaultDomain && (
-            <motion.div {...FADE_IN_ANIMATION_SETTINGS}>
-              <DomainInput
-                data={data}
-                setData={setData}
-                domainError={domainError}
-                setDomainError={setDomainError}
-              />
-            </motion.div>
           )}
         </div>
 
