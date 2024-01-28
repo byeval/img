@@ -50,7 +50,7 @@ export default function PlaceholderContent() {
           }
           className="rounded-full bg-gray-800 px-10 py-2 font-medium text-white transition-colors hover:bg-black"
         >
-          Create Your Free Branded Link
+          Create Your Free Short Link
         </motion.a>
       </motion.div>
     </motion.div>

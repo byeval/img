@@ -3,11 +3,9 @@
 import { APP_DOMAIN, HIDE_BACKGROUND_SEGMENTS, cn, fetcher } from "@dub/utils";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import va from "@vercel/analytics";
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useParams, useSelectedLayoutSegment } from "next/navigation";
 import useSWR from "swr";
-import { FEATURES_LIST } from "./content";
 import { useScroll } from "./hooks";
 import { LogoType } from "./icons";
 import { MaxWidthWrapper } from "./max-width-wrapper";
@@ -59,17 +57,7 @@ export function Nav() {
       >
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link
-              href={domain === "img.pt" ? "/" : `https://img.pt`}
-              {...(domain !== "img.pt" && {
-                onClick: () => {
-                  va.track("Referred from custom domain", {
-                    domain,
-                    medium: "logo",
-                  });
-                },
-              })}
-            >
+            <Link href="https://img.pt">
               <LogoType />
             </Link>
             {helpCenter ? (
@@ -88,7 +76,7 @@ export function Nav() {
                 className="relative hidden lg:block"
               >
                 <NavigationMenuPrimitive.List className="flex flex-row space-x-2 p-4">
-                  <NavigationMenuPrimitive.Item>
+                  {/* <NavigationMenuPrimitive.Item>
                     <NavigationMenuPrimitive.Trigger className="group flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 focus:outline-none">
                       <p
                         className={cn(
@@ -138,7 +126,7 @@ export function Nav() {
                         )}
                       </div>
                     </NavigationMenuPrimitive.Content>
-                  </NavigationMenuPrimitive.Item>
+                  </NavigationMenuPrimitive.Item> */}
 
                   {navItems.map(({ name, slug }) => (
                     <NavigationMenuPrimitive.Item key={slug} asChild>
