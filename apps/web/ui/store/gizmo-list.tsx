@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { API_DOMAIN } from "@dub/utils";
+import GizmoCard from "./gizmo-card";
 
 const searchCategory = {
   name: "Search",
@@ -14,14 +15,14 @@ const searchCategory = {
 
 const defaultCategories = [
   {
-    name: "Top Picks",
-    value: "picked",
-    description: "Curated top picks from this week",
+    name: "Featured",
+    value: "featured",
+    description: "Featured by community and staff picks",
   },
   {
     name: "Newest",
     value: "newest",
-    description: "Newest GPTs on PickedGPT",
+    description: "Newest GPTs on GPT Store",
   },
   {
     name: "DALL·E",
@@ -68,13 +69,17 @@ const defaultCategories = [
 ];
 
 export function GizmoList({ items }: any) {
+  const [loading, setLoading] = useState(false);
   const [gizmos, setGizmos] = useState(items);
   const [categories, setCategories] = useState(defaultCategories);
-  const [selectedCategory, setSelectedCategory] = useState("picked");
+  const [selectedCategory, setSelectedCategory] = useState("featured");
   const [keyword, setKeyword] = useState("");
   const selectedCategoryItem = categories.find(
     (item) => item.value === selectedCategory,
   );
+  const filterRef = useRef<any>({
+    pageNo: 1,
+  });
 
   useEffect(() => {
     if (keyword) {
@@ -84,45 +89,62 @@ export function GizmoList({ items }: any) {
       }
     } else {
       setCategories(defaultCategories);
-      setSelectedCategory("picked");
+      setSelectedCategory("featured");
     }
   }, [keyword]);
 
-  const fetchGizmos = (params: any) => {
-    const query = new URLSearchParams(params);
-
-    fetch(`${API_DOMAIN}/api/gizmos?${query}`, {
+  const fetchGizmos = () => {
+    const query = new URLSearchParams(filterRef.current);
+    setLoading(true);
+    fetch(`http://localhost:8888/api/gizmos?${query}`, {
       next: { revalidate: 0 },
     })
       .then((res) => res.json())
       .then((items) => {
-        setGizmos(items);
+        if (filterRef.current.pageNo === 1) {
+          setGizmos(items);
+        } else {
+          setGizmos([...gizmos, ...items]);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
   const handleSearch = () => {
-    let params: any = {};
+    let params: any = {
+      pageNo: 1,
+    };
     if (keyword) {
       params.keyword = keyword;
     } else {
       params.category = selectedCategory;
     }
-    fetchGizmos(params);
+    filterRef.current = params;
+    fetchGizmos();
   };
 
   const handleCategory = (category: any) => {
     setSelectedCategory(category.value);
-    fetchGizmos({
+    filterRef.current = {
+      pageNo: 1,
       category: category.value,
-    });
+    };
+    fetchGizmos();
+  };
+
+  const handleFetchMore = () => {
+    filterRef.current.pageNo = filterRef.current.pageNo + 1;
+    fetchGizmos();
   };
 
   return (
     <div>
-      <div className="group relative z-20 mb-6 mt-2 flex-grow rounded-xl shadow-[0px_10px_10px_-6px_rgba(0,0,0,0.04)]">
-        <Search className="pointer-none absolute top-0 left-6 mr-2 h-full text-gray-500" />
+      <div className="group relative z-10 mb-6 mt-2 flex-grow rounded-xl shadow-[0px_10px_10px_-6px_rgba(0,0,0,0.04)]">
+        <Search className="pointer-none absolute top-0 left-4 mr-2 h-full text-gray-500" />
         <input
-          className="hover:dark-border-gray-500 z-10 h-12 w-full rounded-xl border border-gray-200 py-2 pr-3 pl-12 text-base font-normal outline-0 delay-100 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 hover:dark:bg-gray-700 md:h-14"
+          className=" z-10 h-12 w-full rounded-xl border border-gray-200 py-2 pr-3 pl-12 text-base font-normal outline-0 delay-100 hover:border-gray-300 hover:bg-gray-50 md:h-14"
           placeholder="Search public GPTs"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
@@ -133,7 +155,7 @@ export function GizmoList({ items }: any) {
           }}
         />
       </div>
-      <div className="sticky top-14 z-10 -ml-4 mb-12 w-screen bg-white py-2 text-sm dark:bg-gray-800 md:ml-0 md:w-full md:pb-0">
+      <div className="sticky top-14 z-10 -ml-4 mb-12 w-screen bg-white py-2 text-sm md:ml-0 md:w-full md:pb-0">
         <div className="no-scrollbar flex scroll-m-5 gap-1.5 overflow-x-auto md:overflow-hidden">
           {categories.map((category) => (
             <div
@@ -141,8 +163,8 @@ export function GizmoList({ items }: any) {
               onClick={() => handleCategory(category)}
               className={`cursor-pointer scroll-mx-5 whitespace-nowrap rounded-3xl px-3 py-2 first:ml-4 last:mr-4 md:px-2 md:first:ml-0 md:last:mr-0 ${
                 selectedCategory === category.value
-                  ? "border-token-text-primary bg-black text-white dark:bg-gray-100 dark:text-gray-800 md:rounded-none md:border-b-2 md:bg-transparent md:text-black dark:md:bg-transparent dark:md:text-white"
-                  : "md:text-token-text-tertiary bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 md:rounded-lg md:bg-transparent md:hover:bg-gray-50 dark:md:bg-transparent dark:md:hover:bg-gray-700"
+                  ? "border-token-text-primary bg-black text-white md:rounded-none md:border-b-2 md:bg-transparent md:text-black"
+                  : "md:text-token-text-tertiary bg-gray-50 hover:bg-gray-100 md:rounded-lg md:bg-transparent md:hover:bg-gray-50"
               }`}
             >
               {category.name}
@@ -151,7 +173,7 @@ export function GizmoList({ items }: any) {
         </div>
       </div>
       <div className="h-fit scroll-mt-28 last:min-h-[calc(100vh-8rem)]">
-        <div>
+        <div className="mb-4">
           <div className="text-xl font-medium md:text-2xl">
             {selectedCategoryItem!.name}
           </div>
@@ -159,45 +181,20 @@ export function GizmoList({ items }: any) {
             {selectedCategoryItem!.description}
           </div>
         </div>
-        <div className="mb-10 mt-4">
-          <div className="grid grid-cols-2 gap-x-1.5 gap-y-1 md:gap-x-2 md:gap-y-1.5 lg:grid-cols-3 lg:gap-x-3 lg:gap-y-2.5">
-            {gizmos.map((gizmo: any, index: number) => (
-              <Link
-                className="group flex h-[104px] items-center gap-2.5 overflow-hidden rounded-xl bg-gray-50 px-1 py-4 hover:bg-gray-100 dark:hover:bg-gray-700 md:px-3 md:py-4 lg:px-3"
-                target="_blank"
-                href={`/store/${gizmo.slug}`}
-                key={gizmo.slug}
-              >
-                <div className="flex w-full flex-grow items-center gap-4 overflow-hidden">
-                  <div className="h-12 w-12 flex-shrink-0">
-                    <div className="gizmo-shadow-stroke overflow-hidden rounded-full">
-                      {/* <Image
-                        src={gizmo.profilePictureUrl}
-                        className="h-full w-full bg-token-surface-secondary dark:bg-token-surface-tertiary"
-                        alt="GPT"
-                        width="80"
-                        height="80"
-                      /> */}
-                    </div>
-                  </div>
-                  <div className="overflow-hidden text-ellipsis break-words">
-                    <span className="line-clamp-2 text-sm font-medium leading-tight">
-                      {gizmo.name}
-                    </span>
-                    <span className="line-clamp-3 text-xs text-gray-700">
-                      {gizmo.description}
-                    </span>
-                    <div className="text-token-text-tertiary mt-1 flex items-center gap-1 text-ellipsis whitespace-nowrap pr-1 text-xs">
-                      <div className="text-token-text-tertiary text-xs text-gray-600">
-                        By {gizmo.inventor?.name}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 gap-x-1.5 gap-y-1 md:grid-cols-2 md:gap-x-2 md:gap-y-1.5 lg:grid-cols-3 lg:gap-x-3 lg:gap-y-2.5">
+          {gizmos.map((gizmo: any) => (
+            <GizmoCard gizmo={gizmo} key={gizmo.slug} />
+          ))}
         </div>
+      </div>
+      <div className="my-10 flex justify-center">
+        <button
+          disabled={loading}
+          onClick={handleFetchMore}
+          className=" focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 w-48 items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
+        >
+          {loading ? "Loading" : " Load More GPTs"}
+        </button>
       </div>
     </div>
   );
