@@ -1,3 +1,4 @@
+import { getGizmo } from "@/lib/api/gizmos";
 import { API_DOMAIN } from "@dub/utils";
 import Image from "next/image";
 
@@ -16,10 +17,6 @@ export async function generateMetadata({
 }) {
   const { slug } = params;
   const id = slug.split("-").reverse()[0];
-  const res = await fetch(`${API_DOMAIN}/api/gizmos/${id}`, {
-    next: { revalidate: 3000 },
-  });
-
   const {
     name,
     description,
@@ -28,7 +25,7 @@ export async function generateMetadata({
     createdAt,
     platform,
     model,
-  } = await res.json();
+  } = await getGizmo({ id });
 
   return {
     title: name,
@@ -48,10 +45,6 @@ export async function generateMetadata({
 export default async function Gizmo({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const id = slug.split("-").reverse()[0];
-  const res = await fetch(`http://localhost:3000/api/gizmo/${id}`, {
-    next: { revalidate: 3000 },
-  });
-
   const {
     name,
     slug: gizmoSlug,
@@ -69,7 +62,7 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
     model,
     featured,
     inventor,
-  } = await res.json();
+  } = await getGizmo({ id });
 
   console.log(inventor);
 

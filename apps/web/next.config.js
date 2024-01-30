@@ -44,6 +44,9 @@ module.exports = {
   images: {
     remotePatterns: [
       {
+        hostname: "files.oaiusercontent.com",
+      },
+      {
         hostname: "www.google.com",
       },
       {
@@ -99,9 +102,9 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/store',
-        destination: 'https://pickedgpt.com',
-      }
-    ]
+        source: "/store",
+        destination: "https://pickedgpt.com",
+      },
+    ];
   },
 };

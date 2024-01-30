@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function GizmoCard({ gizmo }) {
@@ -11,13 +12,13 @@ export default function GizmoCard({ gizmo }) {
       <div className="flex w-full flex-grow items-center gap-4 overflow-hidden">
         <div className="h-12 w-12 flex-shrink-0">
           <div className="gizmo-shadow-stroke overflow-hidden rounded-full">
-            {/* <Image
-                src={gizmo.profilePictureUrl}
-                className="h-full w-full bg-token-surface-secondary dark:bg-token-surface-tertiary"
-                alt="GPT"
-                width="80"
-                height="80"
-              /> */}
+            <Image
+              src={gizmo.profilePictureUrl}
+              className="bg-token-surface-secondary dark:bg-token-surface-tertiary h-full w-full"
+              alt="GPT"
+              width="80"
+              height="80"
+            />
           </div>
         </div>
         <div className="overflow-hidden text-ellipsis break-words">
