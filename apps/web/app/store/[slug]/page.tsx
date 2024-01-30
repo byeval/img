@@ -172,11 +172,11 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
           <h3 className="text-md mb-4 font-medium">Author</h3>
           <div className="flex flex-col space-y-2">
             <strong>name:</strong>
-            {inventor.name}
+            {inventor!.name}
           </div>
           <div className="flex flex-col space-y-2">
             <strong>website:</strong>
-            {inventor.website}
+            {inventor!.website}
           </div>
         </div>
       </div>
