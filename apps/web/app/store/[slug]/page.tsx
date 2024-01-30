@@ -17,6 +17,13 @@ export async function generateMetadata({
 }) {
   const { slug } = params;
   const id = slug.split("-").reverse()[0];
+  const gizmo = await getGizmo({ id });
+  if (!gizmo) {
+    return {
+      title: "404",
+    };
+  }
+
   const {
     name,
     description,
@@ -25,7 +32,7 @@ export async function generateMetadata({
     createdAt,
     platform,
     model,
-  } = await getGizmo({ id });
+  } = gizmo;
 
   return {
     title: name,
@@ -45,6 +52,12 @@ export async function generateMetadata({
 export default async function Gizmo({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const id = slug.split("-").reverse()[0];
+  const gizmo = await getGizmo({ id });
+
+  if (!gizmo) {
+    return null;
+  }
+
   const {
     name,
     slug: gizmoSlug,
@@ -62,14 +75,13 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
     model,
     featured,
     inventor,
-  } = await getGizmo({ id });
-
+  } = gizmo;
   console.log(inventor);
 
-  const starterItems = JSON.parse(promptStarters);
-  const toolItems = JSON.parse(tools);
-  const tagItems = JSON.parse(tags);
-  const categoryItems = JSON.parse(categories);
+  const starterItems = JSON.parse(promptStarters!);
+  const toolItems = JSON.parse(tools!);
+  const tagItems = JSON.parse(tags!);
+  const categoryItems = JSON.parse(categories!);
   const gizmoId = gizmoSlug.split("-").slice(0, 2).join("-");
   const chatgptUrl = `https://chat.openai.com/g/${gizmoId}?ref=pickedgpt.com`;
 
