@@ -295,7 +295,7 @@ export async function processLink({
     // coerce type with ! cause we already checked if it exists
     const { allowedHostnames } = DUB_DOMAINS.find((d) => d.slug === domain)!;
     const urlDomain = getDomainWithoutWWW(url) || "";
-    if (!allowedHostnames.includes(urlDomain)) {
+    if (!allowedHostnames.includes(urlDomain as never)) {
       return {
         link: payload,
         error: `Invalid url. You can only use ${domain} short links for URLs starting with ${allowedHostnames

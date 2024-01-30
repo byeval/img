@@ -4,8 +4,13 @@ enum SortBy {
   "newest" = "createdAt",
 }
 
-export async function searchGizmos({ pageNo, pageSize, category, keyword }) {
-  const skip = (parseInt(pageNo) - 1) * +pageSize;
+export async function searchGizmos({
+  pageNo = 1,
+  pageSize = 30,
+  category = "newest",
+  keyword = "",
+}) {
+  const skip = (pageNo - 1) * pageSize;
   const where: any = {};
   let orderBy: any = {};
 
@@ -41,12 +46,10 @@ export async function searchGizmos({ pageNo, pageSize, category, keyword }) {
     take: pageSize,
   });
 
-  return Response.json(
-    gizmos.map((gizmo) => ({
-      ...gizmo,
-      slug: `${gizmo.slug.split("-").slice(2).join("-")}-${gizmo.id}`,
-    })),
-  );
+  return gizmos.map((gizmo) => ({
+    ...gizmo,
+    slug: `${gizmo.slug.split("-").slice(2).join("-")}-${gizmo.id}`,
+  }));
 }
 
 export async function getGizmo({ id }) {

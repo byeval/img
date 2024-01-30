@@ -137,7 +137,7 @@ function AddEditLinkModal({
       if (!props && defaultDomains) {
         const urlDomain = getDomainWithoutWWW(url) || "";
         const defaultDomain = defaultDomains.find(({ allowedHostnames }) =>
-          allowedHostnames.includes(urlDomain),
+          allowedHostnames.includes(urlDomain as never),
         );
         if (defaultDomain) {
           setData((prev) => ({ ...prev, domain: defaultDomain.slug }));

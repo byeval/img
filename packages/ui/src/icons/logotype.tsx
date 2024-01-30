@@ -11,11 +11,11 @@ export default function LogoType({ className }: { className?: string }) {
     >
       <g
         id="svgGroup"
-        stroke-linecap="round"
-        fill-rule="evenodd"
-        font-size="9pt"
+        strokeLinecap="round"
+        fillRule="evenodd"
+        fontSize="9pt"
         stroke="#000"
-        stroke-width="0.25mm"
+        strokeWidth="0.25mm"
         fill="#000"
       >
         <path

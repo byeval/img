@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 enum SortBy {
   "newest" = "createdAt",
@@ -48,7 +48,7 @@ export async function GET(req: NextRequest) {
     take: pageSize,
   });
 
-  return Response.json(
+  return NextResponse.json(
     gizmos.map((gizmo) => ({
       ...gizmo,
       slug: `${gizmo.slug.split("-").slice(2).join("-")}-${gizmo.id}`,

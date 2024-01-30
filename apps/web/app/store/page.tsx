@@ -2,13 +2,10 @@ import Link from "next/link";
 import { GizmoList } from "@/ui/store/gizmo-list";
 import { API_DOMAIN } from "@dub/utils";
 import GizmoTops from "@/ui/store/gizmo-tops";
+import { searchGizmos } from "@/lib/api/gizmos";
 
 export default async function Store() {
-  const res = await fetch(`${API_DOMAIN}/api/gizmos`, {
-    next: { revalidate: 0 },
-  });
-
-  const gizmos = await res.json();
+  const gizmos = await searchGizmos({});
 
   return (
     <main>
