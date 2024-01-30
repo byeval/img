@@ -96,7 +96,7 @@ export function GizmoList({ items }: any) {
   const fetchGizmos = () => {
     const query = new URLSearchParams(filterRef.current);
     setLoading(true);
-    fetch(`http://img.pt/api/gizmos?${query}`, {
+    fetch(`https://img.pt/api/gizmos?${query}`, {
       next: { revalidate: 0 },
     })
       .then((res) => res.json())
