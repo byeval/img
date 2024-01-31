@@ -5,6 +5,7 @@ import { TooltipProvider } from "@dub/ui/src/tooltip";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = constructMetadata();
 
@@ -23,6 +24,7 @@ export default function RootLayout({
           <SpeedInsights />
         </TooltipProvider>
       </body>
+      <GoogleAnalytics gaId="G-X6T98X49LH" />
     </html>
   );
 }

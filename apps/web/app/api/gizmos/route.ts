@@ -31,6 +31,10 @@ export async function GET(req: NextRequest) {
     };
   }
 
+  if (pageNo > 50) {
+    return NextResponse.json([]);
+  }
+
   console.log(where, orderBy);
   const gizmos = await prisma.gizmo.findMany({
     where,
