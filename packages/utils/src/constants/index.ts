@@ -46,6 +46,7 @@ export const APP_HOSTNAMES = new Set([
   `app.${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
   `preview.${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
   "app.localhost:8888",
+  `app.${process.env.NEXT_PUBLIC_APP_DOMAIN}:8888`,
 ]);
 
 export const APP_DOMAIN =

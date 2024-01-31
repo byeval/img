@@ -100,11 +100,6 @@ module.exports = {
     return [];
   },
   async rewrites() {
-    return [
-      {
-        source: "/store",
-        destination: "https://pickedgpt.com",
-      },
-    ];
+    return [];
   },
 };

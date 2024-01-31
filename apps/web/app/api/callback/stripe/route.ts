@@ -104,7 +104,7 @@ export const POST = async (req: Request) => {
             limiter.schedule(() =>
               sendEmail({
                 email: user.email as string,
-                subject: `Thank you for upgrading to Dub.co ${plan.name}!`,
+                subject: `Thank you for upgrading to img.pt ${plan.name}!`,
                 react: UpgradeEmail({
                   name: user.name,
                   email: user.email as string,

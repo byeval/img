@@ -13,6 +13,7 @@ export default async function AppMiddleware(req: NextRequest) {
     email?: string;
     user?: UserProps;
   };
+  console.log(session, 2222)
   // if there's no session and the path isn't /login or /register, redirect to /login
   if (
     !session?.email &&
