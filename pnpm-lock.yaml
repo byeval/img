@@ -236,6 +236,9 @@ importers:
       resend:
         specifier: 1.1.0
         version: 1.1.0
+      schema-dts:
+        specifier: ^1.1.2
+        version: 1.1.2(typescript@5.1.6)
       shiki:
         specifier: ^0.14.1
         version: 0.14.1
@@ -14382,6 +14385,14 @@ packages:
     resolution: {integrity: sha512-ABvovCDe/k9IluqSh4/ISoq8tIJnW8euVAWYt5j/bg6dRnqwQwiGO1F/V4AyK96NGF/FB04FhOUDuWj8IKfABA==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /schema-dts@1.1.2(typescript@5.1.6):
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 5.1.6
     dev: false
 
   /schema-utils@3.3.0:

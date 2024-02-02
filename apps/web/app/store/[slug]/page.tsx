@@ -1,6 +1,7 @@
 import { getGizmo } from "@/lib/api/gizmos";
 import { API_DOMAIN } from "@dub/utils";
 import Image from "next/image";
+import { WebApplication, WithContext } from "schema-dts";
 
 const ToolDescriptionMap: any = {
   python:
@@ -76,7 +77,6 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
     featured,
     inventor,
   } = gizmo;
-  console.log(inventor);
 
   const starterItems = JSON.parse(promptStarters!);
   const toolItems = JSON.parse(tools!);
@@ -85,10 +85,32 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
   const gizmoId = gizmoSlug.split("-").slice(0, 2).join("-");
   const chatgptUrl = `https://chat.openai.com/g/${gizmoId}?ref=pickedgpt.com`;
 
+  const jsonLd: WithContext<WebApplication> = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description: description!,
+    applicationCategory: categoryItems.join(",")!,
+    applicationSubCategory: tagItems.join(",")!,
+    url: `https://img.pt/store/${slug}`,
+    datePublished: createdAt.toISOString(),
+    dateModified: updatedAt.toISOString(),
+    image: profilePictureUrl,
+    author: {
+      "@type": "Person",
+      name: inventor!.name,
+      url: inventor!.website || undefined,
+    },
+  };
+
   return (
-    <main className="mx-auto flex max-w-7xl gap-4 px-4 py-10">
+    <main className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 lg:flex-row lg:px-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="flex flex-1 flex-col gap-4">
-        <div className="bg-card text-card-foreground flex rounded-lg border p-5 shadow-sm ">
+        <div className="bg-card text-card-foreground flex flex-col gap-4 rounded-lg border p-5 shadow-sm lg:flex-row ">
           <div className="mr-4 h-[72px] w-[72px]">
             {profilePictureUrl ? (
               <Image
@@ -167,8 +189,8 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-      <div className="w-[300px]">
-        <div className="bg-card text-card-foreground rounded-lg border p-5 shadow-sm">
+      <div className="w-full lg:w-[300px]">
+        <div className="bg-card text-card-foreground w-full rounded-lg border p-5 shadow-sm">
           <h3 className="text-md mb-4 font-medium">Author</h3>
           <div className="flex flex-col space-y-2">
             <strong>name:</strong>

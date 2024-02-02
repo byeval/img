@@ -80,6 +80,7 @@
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "resend": "1.1.0",
+    "schema-dts": "^1.1.2",
     "shiki": "^0.14.1",
     "sonner": "^0.5.0",
     "stripe": "^12.12.0",

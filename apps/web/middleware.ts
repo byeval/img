@@ -31,7 +31,6 @@ export const config = {
 
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
   const { domain, path, key } = parse(req);
-  console.log(123, domain, path, key, APP_HOSTNAMES);
 
   // for App
   if (APP_HOSTNAMES.has(domain)) {

@@ -8,7 +8,7 @@ export default async function Store() {
 
   return (
     <main>
-      <div className="mx-auto max-w-screen-xl overflow-x-clip px-4">
+      <div className="mx-auto max-w-screen-xl overflow-x-clip px-4 lg:px-20">
         <div className="mt-12 mb-8">
           <h1 className="my-2 text-center text-3xl font-bold md:my-4 md:text-5xl">
             I'm GPT Store.
