@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { HOME_DOMAIN } from "../constants";
 
 export function constructMetadata({
-  title = `${process.env.NEXT_PUBLIC_APP_NAME} - Link Management for Modern Marketing Teams`,
-  description = `${process.env.NEXT_PUBLIC_APP_NAME} is the open-source link management infrastructure for modern marketing teams to create, share, and track short links.`,
+  title = `${process.env.NEXT_PUBLIC_APP_NAME} - Open-source gpt link shortener, and get featured in our gpt store`,
+  description = `${process.env.NEXT_PUBLIC_APP_NAME} is the open-source gpt link shortener service, provide user to share, and track gpts links.`,
   image = "https://img.pt/_static/thumbnail.png",
   icons = [
     {

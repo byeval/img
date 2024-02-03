@@ -98,7 +98,7 @@ export const DEFAULT_REDIRECTS = {
 
 export const DUB_HEADERS = {
   headers: {
-    "x-powered-by": "img.pt - Link management for modern marketing teams",
+    "x-powered-by": "img.pt - chatgpt link shortner",
   },
 };
 

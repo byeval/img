@@ -83,7 +83,7 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
   const tagItems = JSON.parse(tags!);
   const categoryItems = JSON.parse(categories!);
   const gizmoId = gizmoSlug.split("-").slice(0, 2).join("-");
-  const chatgptUrl = `https://chat.openai.com/g/${gizmoId}?ref=pickedgpt.com`;
+  const chatgptUrl = `https://chat.openai.com/g/${gizmoId}?ref=img.pt`;
 
   const jsonLd: WithContext<WebApplication> = {
     "@context": "https://schema.org",
