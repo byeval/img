@@ -1,4 +1,4 @@
-import { Background } from "@dub/ui";
+import { Background } from "@imgpt/ui";
 import { ReactNode } from "react";
 
 export const runtime = "edge";

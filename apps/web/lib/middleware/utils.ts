@@ -1,4 +1,4 @@
-import { SHORT_DOMAIN } from "@dub/utils";
+import { SHORT_DOMAIN } from "@imgpt/utils";
 import { NextRequest } from "next/server";
 
 export const parse = (req: NextRequest) => {

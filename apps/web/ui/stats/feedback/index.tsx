@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@dub/ui";
+import { Button } from "@imgpt/ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";

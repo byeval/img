@@ -1,6 +1,6 @@
 "use client";
 
-import { ALL_TOOLS } from "@dub/utils";
+import { ALL_TOOLS } from "@imgpt/utils";
 import va from "@vercel/analytics";
 import Link from "next/link";
 import { useParams } from "next/navigation";

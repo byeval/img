@@ -16,7 +16,7 @@ import {
   Tooltip,
   TooltipContent,
   useRouterStuff,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   APP_HOSTNAMES,
   FADE_IN_ANIMATION_SETTINGS,
@@ -24,7 +24,7 @@ import {
   HOME_DOMAIN,
   getApexDomain,
   linkConstructor,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { motion } from "framer-motion";
 import { Check, ChevronRight } from "lucide-react";
 import {

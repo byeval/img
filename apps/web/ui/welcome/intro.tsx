@@ -1,4 +1,4 @@
-import { STAGGER_CHILD_VARIANTS } from "@dub/utils";
+import { STAGGER_CHILD_VARIANTS } from "@imgpt/utils";
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";

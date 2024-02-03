@@ -1,6 +1,6 @@
 import { BlurImage } from "@/ui/shared/blur-image";
-import { Logo } from "@dub/ui";
-import { STAGGER_CHILD_VARIANTS } from "@dub/utils";
+import { Logo } from "@imgpt/ui";
+import { STAGGER_CHILD_VARIANTS } from "@imgpt/utils";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 

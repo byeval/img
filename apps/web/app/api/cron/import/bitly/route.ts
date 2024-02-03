@@ -2,7 +2,7 @@ import { receiver } from "@/lib/cron";
 import prisma from "@/lib/prisma";
 import { redis } from "@/lib/upstash";
 import { randomBadgeColor } from "@/ui/links/tag-badge";
-import { log } from "@dub/utils";
+import { log } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 import { importLinksFromBitly } from "./utils";
 

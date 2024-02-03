@@ -1,6 +1,6 @@
 "use server";
 
-import { nanoid } from "@dub/utils";
+import { nanoid } from "@imgpt/utils";
 import { resend } from "emails";
 import FeedbackEmail from "emails/feedback-email";
 

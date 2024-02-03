@@ -6,7 +6,7 @@ import useProject from "@/lib/swr/use-project";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import ProBanner from "../projects/pro-banner";
-import { Badge, useRouterStuff } from "@dub/ui";
+import { Badge, useRouterStuff } from "@imgpt/ui";
 
 export default function UpgradeBanner() {
   const { slug } = useParams() as { slug?: string };

@@ -1,5 +1,5 @@
 import { ProjectWithDomainProps } from "@/lib/types";
-import { fetcher } from "@dub/utils";
+import { fetcher } from "@imgpt/utils";
 import useSWR from "swr";
 
 export default function useProjects() {

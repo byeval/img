@@ -8,7 +8,7 @@ import {
   getAdjustedBillingCycleStart,
   linkConstructor,
   log,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { sendEmail } from "emails";
 import ClicksSummary from "emails/clicks-summary";
 import ClicksExceeded from "emails/clicks-exceeded";

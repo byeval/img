@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Copy, Tick } from "./icons";

@@ -2,7 +2,7 @@ import {
   GOOGLE_FAVICON_URL,
   constructMetadata,
   getApexDomain,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { getMetaTags } from "app/api/edge/metatags/utils";
 
 export const runtime = "edge";

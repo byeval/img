@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import SAMLIDPForm from "./form";
-import { LoadingSpinner } from "@dub/ui";
+import { LoadingSpinner } from "@imgpt/ui";
 
 export default function SAMLPage() {
   return (

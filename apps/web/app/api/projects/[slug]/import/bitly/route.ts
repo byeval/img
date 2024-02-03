@@ -4,7 +4,7 @@ import { qstash } from "@/lib/cron";
 import prisma from "@/lib/prisma";
 import { BitlyGroupProps } from "@/lib/types";
 import { redis } from "@/lib/upstash";
-import { APP_DOMAIN_WITH_NGROK } from "@dub/utils";
+import { APP_DOMAIN_WITH_NGROK } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 
 // GET /api/projects/[slug]/import/bitly – get all bitly groups for a project

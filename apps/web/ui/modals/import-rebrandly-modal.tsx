@@ -8,8 +8,8 @@ import {
   SimpleTooltipContent,
   Switch,
   useRouterStuff,
-} from "@dub/ui";
-import { fetcher, nFormatter } from "@dub/utils";
+} from "@imgpt/ui";
+import { fetcher, nFormatter } from "@imgpt/utils";
 import { ArrowRight } from "lucide-react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import {

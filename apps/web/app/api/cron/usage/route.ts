@@ -1,5 +1,5 @@
 import { verifySignature } from "@/lib/cron";
-import { getSearchParams, log } from "@dub/utils";
+import { getSearchParams, log } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 import { updateUsage } from "./utils";
 

@@ -5,13 +5,13 @@ import {
   LinkPreview,
   LinkPreviewPlaceholder,
   Nav,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   GOOGLE_FAVICON_URL,
   HOME_DOMAIN,
   constructMetadata,
   getApexDomain,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { notFound } from "next/navigation";
 import LinkInspectorCard from "./card";
 import { Suspense } from "react";

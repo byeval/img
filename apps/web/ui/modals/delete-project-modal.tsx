@@ -1,7 +1,7 @@
 import useProject from "@/lib/swr/use-project";
 import { BlurImage } from "@/ui/shared/blur-image";
-import { Button, Logo, Modal } from "@dub/ui";
-import { GOOGLE_FAVICON_URL, cn } from "@dub/utils";
+import { Button, Logo, Modal } from "@imgpt/ui";
+import { GOOGLE_FAVICON_URL, cn } from "@imgpt/utils";
 import { useParams, useRouter } from "next/navigation";
 import {
   Dispatch,

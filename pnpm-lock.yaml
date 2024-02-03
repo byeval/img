@@ -8,7 +8,7 @@ importers:
 
   .:
     devDependencies:
-      '@dub/tailwind-config':
+      '@imgpt/tailwind-config':
         specifier: workspace:*
         version: link:packages/tailwind-config
       eslint:
@@ -35,13 +35,13 @@ importers:
       '@boxyhq/saml-jackson':
         specifier: ^1.14.2
         version: 1.14.2
-      '@dub/tailwind-config':
+      '@imgpt/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
-      '@dub/ui':
+      '@imgpt/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@dub/utils':
+      '@imgpt/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       '@next-auth/prisma-adapter':
@@ -406,10 +406,10 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
-      '@dub/tailwind-config':
+      '@imgpt/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
-      '@dub/utils':
+      '@imgpt/utils':
         specifier: workspace:*
         version: link:../utils
       '@types/js-cookie':

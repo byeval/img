@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import Link from "next/link";
 import { useParams, useSelectedLayoutSegment } from "next/navigation";
 import { ReactNode } from "react";

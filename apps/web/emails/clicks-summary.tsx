@@ -1,4 +1,4 @@
-import { DUB_LOGO, nFormatter, truncate } from "@dub/utils";
+import { DUB_LOGO, nFormatter, truncate } from "@imgpt/utils";
 import {
   Body,
   Column,

@@ -1,6 +1,6 @@
 import useLinksCount from "@/lib/swr/use-links-count";
-import { NumberTooltip, useRouterStuff } from "@dub/ui";
-import { PAGINATION_LIMIT, nFormatter } from "@dub/utils";
+import { NumberTooltip, useRouterStuff } from "@imgpt/ui";
+import { PAGINATION_LIMIT, nFormatter } from "@imgpt/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 

@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
 import { getLinkViaEdge } from "@/lib/planetscale";
 import { getStats } from "@/lib/stats";
-import { DUB_LOGO, nFormatter, truncate } from "@dub/utils";
+import { DUB_LOGO, nFormatter, truncate } from "@imgpt/utils";
 
 export const runtime = "edge";
 

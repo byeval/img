@@ -1,7 +1,7 @@
 import { isWhitelistedEmail } from "@/lib/edge-config";
 import { conn } from "@/lib/planetscale";
 import { ratelimit } from "@/lib/upstash";
-import { LOCALHOST_IP } from "@dub/utils";
+import { LOCALHOST_IP } from "@imgpt/utils";
 import { ipAddress } from "@vercel/edge";
 import { NextRequest, NextResponse } from "next/server";
 

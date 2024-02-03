@@ -5,7 +5,7 @@ import {
   LEGAL_PROJECT_ID,
   LEGAL_USER_ID,
   getDomainWithoutWWW,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { formatRedisLink, redis } from "@/lib/upstash";
 import { get } from "@vercel/edge-config";
 

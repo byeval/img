@@ -1,7 +1,7 @@
 "use client";
 
-import { NumberTooltip, Tooltip } from "@dub/ui";
-import { cn, nFormatter } from "@dub/utils";
+import { NumberTooltip, Tooltip } from "@imgpt/ui";
+import { cn, nFormatter } from "@imgpt/utils";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import Link from "next/link";

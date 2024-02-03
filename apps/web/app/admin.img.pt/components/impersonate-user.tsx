@@ -1,7 +1,7 @@
 "use client";
 
-import { Copy, LoadingSpinner, Tick } from "@dub/ui";
-import { cn } from "@dub/utils";
+import { Copy, LoadingSpinner, Tick } from "@imgpt/ui";
+import { cn } from "@imgpt/utils";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";
 import { toast } from "sonner";

@@ -6,7 +6,7 @@ import {
   LEGAL_PROJECT_ID,
   LOCALHOST_GEO_DATA,
   LOCALHOST_IP,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { ipAddress } from "@vercel/edge";
 import {
   NextFetchEvent,

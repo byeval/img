@@ -1,7 +1,7 @@
 "use client";
 
-import { Button, Copy, LoadingSpinner, Tick } from "@dub/ui";
-import { cn } from "@dub/utils";
+import { Button, Copy, LoadingSpinner, Tick } from "@imgpt/ui";
+import { cn } from "@imgpt/utils";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";

@@ -9,8 +9,8 @@ import {
   Modal,
   SimpleTooltipContent,
   Tick,
-} from "@dub/ui";
-import { HOME_DOMAIN, SAML_PROVIDERS } from "@dub/utils";
+} from "@imgpt/ui";
+import { HOME_DOMAIN, SAML_PROVIDERS } from "@imgpt/utils";
 import { Eye, EyeOff, FolderSync, RefreshCcw } from "lucide-react";
 import {
   Dispatch,

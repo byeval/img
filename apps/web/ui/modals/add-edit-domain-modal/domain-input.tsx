@@ -1,16 +1,16 @@
 import { AlertCircleFill, CheckCircleFill } from "@/ui/shared/icons";
-import { Label, RadioGroup, RadioGroupItem } from "@dub/ui";
+import { Label, RadioGroup, RadioGroupItem } from "@imgpt/ui";
 import {
   FADE_IN_ANIMATION_SETTINGS,
   cn,
   getApexDomain,
   getSubdomain,
   getUrlFromString,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { useEffect, useMemo, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { motion } from "framer-motion";
-import { InfoTooltip } from "@dub/ui/src/tooltip";
+import { InfoTooltip } from "@imgpt/ui/src/tooltip";
 
 export default function DomainInput({
   identifier = "domain", // "domain" is the default, but when it's used in AddEditDomainModal, it's "slug"
@@ -112,7 +112,7 @@ export default function DomainInput({
             Domain is already in use.{" "}
             <a
               className="underline"
-              href="mailto:support@dub.co?subject=My Domain Is Already In Use"
+              href="mailto:support@img.pt?subject=My Domain Is Already In Use"
             >
               Contact us
             </a>{" "}

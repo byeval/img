@@ -1,4 +1,4 @@
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const badgeVariants = cva(

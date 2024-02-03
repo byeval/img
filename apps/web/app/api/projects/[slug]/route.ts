@@ -2,7 +2,7 @@ import { withAuth } from "@/lib/auth";
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { deleteProject } from "@/lib/api/projects";
-import { DEFAULT_REDIRECTS, validSlugRegex } from "@dub/utils";
+import { DEFAULT_REDIRECTS, validSlugRegex } from "@imgpt/utils";
 import { isReservedKey } from "@/lib/edge-config";
 
 // GET /api/projects/[slug] – get a specific project

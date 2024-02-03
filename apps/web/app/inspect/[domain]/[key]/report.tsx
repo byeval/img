@@ -1,7 +1,7 @@
 "use client";
 
-import { LoadingSpinner } from "@dub/ui";
-import { cn } from "@dub/utils";
+import { LoadingSpinner } from "@imgpt/ui";
+import { cn } from "@imgpt/utils";
 import { Flag } from "lucide-react";
 import { useState } from "react";
 

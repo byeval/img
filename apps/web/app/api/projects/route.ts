@@ -12,7 +12,7 @@ import {
   DEFAULT_REDIRECTS,
   FREE_PROJECTS_LIMIT,
   validSlugRegex,
-} from "@dub/utils";
+} from "@imgpt/utils";
 
 // GET /api/projects - get all projects for the current user
 export const GET = withSession(async ({ session }) => {

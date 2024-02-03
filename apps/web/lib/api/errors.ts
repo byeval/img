@@ -1,4 +1,4 @@
-import { capitalize } from "@dub/utils";
+import { capitalize } from "@imgpt/utils";
 import { PlanProps } from "../types";
 
 export const exceededLimitError = ({

@@ -1,4 +1,4 @@
-import { useRouterStuff } from "@dub/ui";
+import { useRouterStuff } from "@imgpt/ui";
 import va from "@vercel/analytics";
 import Cookies from "js-cookie";
 import { useParams } from "next/navigation";

@@ -1,4 +1,4 @@
-import { Nav, NavMobile } from "@dub/ui";
+import { Nav, NavMobile } from "@imgpt/ui";
 
 export default function StoreLayout({
   children,

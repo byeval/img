@@ -1,5 +1,5 @@
 import { UserProps } from "@/lib/types";
-import { Avatar, CopyButton } from "@dub/ui";
+import { Avatar, CopyButton } from "@imgpt/ui";
 import {
   GOOGLE_FAVICON_URL,
   cn,
@@ -7,7 +7,7 @@ import {
   getApexDomain,
   linkConstructor,
   timeAgo,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { Link as LinkProps } from "@prisma/client";
 import { Archive, EyeOff, Globe, Trash } from "lucide-react";
 import { useParams } from "next/navigation";

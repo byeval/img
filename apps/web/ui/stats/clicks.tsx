@@ -1,6 +1,6 @@
 import { Chart } from "@/ui/shared/icons";
-import { NumberTooltip, useRouterStuff } from "@dub/ui";
-import { COUNTRIES, capitalize, linkConstructor, nFormatter } from "@dub/utils";
+import { NumberTooltip, useRouterStuff } from "@imgpt/ui";
+import { COUNTRIES, capitalize, linkConstructor, nFormatter } from "@imgpt/utils";
 import { useContext } from "react";
 import { StatsContext } from ".";
 import BarChart from "./bar-chart";

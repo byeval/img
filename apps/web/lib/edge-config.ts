@@ -1,4 +1,4 @@
-import { getDomainWithoutWWW } from "@dub/utils";
+import { getDomainWithoutWWW } from "@imgpt/utils";
 import { get } from "@vercel/edge-config";
 
 export const isBlacklistedDomain = async (domain: string) => {

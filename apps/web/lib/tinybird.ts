@@ -3,7 +3,7 @@ import {
   capitalize,
   getDomainWithoutWWW,
   LOCALHOST_IP,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { ipAddress } from "@vercel/edge";
 import { NextRequest, userAgent } from "next/server";
 import { conn } from "./planetscale";

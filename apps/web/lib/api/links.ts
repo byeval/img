@@ -18,7 +18,7 @@ import {
   nanoid,
   truncate,
   validKeyRegex,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import cloudinary from "cloudinary";
 import { LinkProps, ProjectProps, RedisLinkProps } from "../types";
 import { Session } from "../auth";

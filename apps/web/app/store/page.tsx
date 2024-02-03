@@ -1,5 +1,5 @@
 import { GizmoList } from "@/ui/store/gizmo-list";
-import { API_DOMAIN } from "@dub/utils";
+import { API_DOMAIN } from "@imgpt/utils";
 import GizmoTops from "@/ui/store/gizmo-tops";
 import { searchGizmos } from "@/lib/api/gizmos";
 

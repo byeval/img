@@ -12,7 +12,7 @@ import {
   TooltipContent,
   useRouterStuff,
   useScroll,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   APP_DOMAIN,
   DUB_LOGO,
@@ -23,7 +23,7 @@ import {
   getApexDomain,
   linkConstructor,
   truncate,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { Calendar, ChevronDown, Lock, Share2 } from "lucide-react";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";

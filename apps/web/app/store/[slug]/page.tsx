@@ -1,5 +1,5 @@
 import { getGizmo } from "@/lib/api/gizmos";
-import { API_DOMAIN } from "@dub/utils";
+import { API_DOMAIN } from "@imgpt/utils";
 import Image from "next/image";
 import { WebApplication, WithContext } from "schema-dts";
 

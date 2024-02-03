@@ -1,11 +1,11 @@
-# `@dub/utils`
+# `@imgpt/utils`
 
-`@dub/utils` is a library of utility functions that are used across img.pt's web applications.
+`@imgpt/utils` is a library of utility functions that are used across img.pt's web applications.
 
 ## Installation
 
 To install the package, run:
 
 ```bash
-pnpm i @dub/utils
+pnpm i @imgpt/utils
 ```

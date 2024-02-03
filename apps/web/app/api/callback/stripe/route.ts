@@ -2,7 +2,7 @@ import { limiter } from "@/lib/cron";
 import prisma from "@/lib/prisma";
 import { stripe } from "@/lib/stripe";
 import { redis } from "@/lib/upstash";
-import { FREE_PLAN, getPlanFromPriceId, log } from "@dub/utils";
+import { FREE_PLAN, getPlanFromPriceId, log } from "@imgpt/utils";
 import { resend, sendEmail } from "emails";
 import UpgradeEmail from "emails/upgrade-email";
 import { NextResponse } from "next/server";

@@ -1,8 +1,8 @@
 import useProject from "@/lib/swr/use-project";
 import useSAML from "@/lib/swr/use-saml";
 import { BlurImage } from "@/ui/shared/blur-image";
-import { Button, Logo, Modal } from "@dub/ui";
-import { SAML_PROVIDERS } from "@dub/utils";
+import { Button, Logo, Modal } from "@imgpt/ui";
+import { SAML_PROVIDERS } from "@imgpt/utils";
 import {
   Dispatch,
   SetStateAction,

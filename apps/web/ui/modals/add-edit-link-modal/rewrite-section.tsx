@@ -5,8 +5,8 @@ import {
   Switch,
   TooltipContent,
   useRouterStuff,
-} from "@dub/ui";
-import { HOME_DOMAIN } from "@dub/utils";
+} from "@imgpt/ui";
+import { HOME_DOMAIN } from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 

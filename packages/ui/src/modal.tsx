@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";

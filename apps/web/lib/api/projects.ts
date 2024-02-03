@@ -3,7 +3,7 @@ import prisma from "@/lib/prisma";
 import { cancelSubscription } from "@/lib/stripe";
 import cloudinary from "cloudinary";
 import { ProjectProps } from "../types";
-import { DUB_DOMAINS } from "@dub/utils";
+import { DUB_DOMAINS } from "@imgpt/utils";
 import { redis } from "../upstash";
 
 export async function deleteProject(

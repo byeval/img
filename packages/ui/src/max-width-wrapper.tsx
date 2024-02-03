@@ -1,4 +1,4 @@
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import { ReactNode } from "react";
 
 export function MaxWidthWrapper({

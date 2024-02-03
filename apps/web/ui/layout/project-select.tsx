@@ -3,8 +3,8 @@
 import { PlanProps, ProjectWithDomainProps } from "@/lib/types";
 import { ModalContext } from "@/ui/modals/provider";
 import PlanBadge from "@/ui/projects/plan-badge";
-import { Popover, Tick } from "@dub/ui";
-import { GOOGLE_FAVICON_URL, SHORT_DOMAIN } from "@dub/utils";
+import { Popover, Tick } from "@imgpt/ui";
+import { GOOGLE_FAVICON_URL, SHORT_DOMAIN } from "@imgpt/utils";
 import { ChevronsUpDown, PlusCircle } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";

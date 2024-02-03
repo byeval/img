@@ -1,4 +1,4 @@
-import { Background, LoadingSpinner } from "@dub/ui";
+import { Background, LoadingSpinner } from "@imgpt/ui";
 
 export default function Loading() {
   return (

@@ -1,4 +1,4 @@
-import { InfoTooltip, SimpleTooltipContent, Switch } from "@dub/ui";
+import { InfoTooltip, SimpleTooltipContent, Switch } from "@imgpt/ui";
 import {
   FADE_IN_ANIMATION_SETTINGS,
   HOME_DOMAIN,
@@ -6,7 +6,7 @@ import {
   getParamsFromURL,
   getUrlWithoutUTMParams,
   paramsMetadata,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";

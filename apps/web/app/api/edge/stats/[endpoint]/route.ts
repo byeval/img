@@ -1,9 +1,9 @@
-import { getSearchParams } from "@dub/utils";
+import { getSearchParams } from "@imgpt/utils";
 import { isBlacklistedReferrer } from "@/lib/edge-config";
 import { getLinkViaEdge } from "@/lib/planetscale";
 import { getStats } from "@/lib/stats";
 import { ratelimit } from "@/lib/upstash";
-import { LOCALHOST_IP } from "@dub/utils";
+import { LOCALHOST_IP } from "@imgpt/utils";
 import { ipAddress } from "@vercel/edge";
 import { NextResponse, type NextRequest } from "next/server";
 

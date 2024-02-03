@@ -7,8 +7,8 @@ import {
   Switch,
   Unsplash,
   useRouterStuff,
-} from "@dub/ui";
-import { FADE_IN_ANIMATION_SETTINGS, HOME_DOMAIN } from "@dub/utils";
+} from "@imgpt/ui";
+import { FADE_IN_ANIMATION_SETTINGS, HOME_DOMAIN } from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { motion } from "framer-motion";
 import { Link2 } from "lucide-react";
@@ -22,7 +22,7 @@ import {
 import TextareaAutosize from "react-textarea-autosize";
 import UnsplashSearch from "./unsplash-search";
 import useProject from "@/lib/swr/use-project";
-import { TooltipContent } from "@dub/ui/src/tooltip";
+import { TooltipContent } from "@imgpt/ui/src/tooltip";
 
 export default function OGSection({
   props,

@@ -1,5 +1,5 @@
 import type { SAMLSSORecord } from "@boxyhq/saml-jackson";
-import { fetcher } from "@dub/utils";
+import { fetcher } from "@imgpt/utils";
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
 import useSWR from "swr";

@@ -1,6 +1,6 @@
 import { BlurImage } from "@/ui/shared/blur-image";
-import { CopyButton } from "@dub/ui";
-import { GOOGLE_FAVICON_URL, getApexDomain, linkConstructor } from "@dub/utils";
+import { CopyButton } from "@imgpt/ui";
+import { GOOGLE_FAVICON_URL, getApexDomain, linkConstructor } from "@imgpt/utils";
 import Script from "next/script";
 import ReportButton from "./report";
 

@@ -1,4 +1,4 @@
-import { constructMetadata } from "@dub/utils";
+import { constructMetadata } from "@imgpt/utils";
 import WelcomePageClient from "./page-client";
 
 export const runtime = "nodejs";

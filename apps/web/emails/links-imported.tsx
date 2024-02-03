@@ -1,4 +1,4 @@
-import { DUB_LOGO, linkConstructor, timeAgo } from "@dub/utils";
+import { DUB_LOGO, linkConstructor, timeAgo } from "@imgpt/utils";
 import {
   Body,
   Column,

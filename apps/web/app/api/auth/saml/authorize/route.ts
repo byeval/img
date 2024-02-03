@@ -1,5 +1,5 @@
 import jackson from "@/lib/jackson";
-import { getSearchParams } from "@dub/utils";
+import { getSearchParams } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 
 const handler = async (req: Request) => {

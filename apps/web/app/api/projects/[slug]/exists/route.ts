@@ -1,7 +1,7 @@
 import { withSession } from "@/lib/auth";
 import { isReservedKey } from "@/lib/edge-config";
 import prisma from "@/lib/prisma";
-import { DEFAULT_REDIRECTS } from "@dub/utils";
+import { DEFAULT_REDIRECTS } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 
 // GET /api/projects/[slug]/exists – check if a project exists

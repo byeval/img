@@ -1,13 +1,13 @@
 import { parse } from "node-html-parser";
 import he from "he";
 import { recordMetatags } from "@/lib/upstash";
-import { fetchWithTimeout, isValidUrl } from "@dub/utils";
+import { fetchWithTimeout, isValidUrl } from "@imgpt/utils";
 import { internal_runWithWaitUntil as waitUntil } from "next/dist/server/web/internal-edge-wait-until";
 
 export const getHtml = async (url: string) => {
   return await fetchWithTimeout(url, {
     headers: {
-      "User-Agent": "Dub.co Bot",
+      "User-Agent": "img.pt Bot",
     },
   })
     .then((r) => r.text())

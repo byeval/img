@@ -5,7 +5,7 @@ import {
 } from "@/lib/api/domains";
 import { verifySignature } from "@/lib/cron";
 import prisma from "@/lib/prisma";
-import { log } from "@dub/utils";
+import { log } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 import { handleDomainUpdates } from "./utils";
 

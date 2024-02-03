@@ -1,5 +1,5 @@
-import { fetcher } from "@dub/utils";
-import { useRouterStuff } from "@dub/ui";
+import { fetcher } from "@imgpt/utils";
+import { useRouterStuff } from "@imgpt/ui";
 import { useParams } from "next/navigation";
 import useSWR from "swr";
 import { useEffect, useState } from "react";

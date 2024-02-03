@@ -8,8 +8,8 @@ import { useRemoveSCIMModal } from "@/ui/modals/remove-scim-modal";
 import { useSAMLModal } from "@/ui/modals/saml-modal";
 import { useSCIMModal } from "@/ui/modals/scim-modal";
 import { ThreeDots } from "@/ui/shared/icons";
-import { Button, IconMenu, Popover, TooltipContent } from "@dub/ui";
-import { HOME_DOMAIN, SAML_PROVIDERS } from "@dub/utils";
+import { Button, IconMenu, Popover, TooltipContent } from "@imgpt/ui";
+import { HOME_DOMAIN, SAML_PROVIDERS } from "@imgpt/utils";
 import { FolderSync, Lock, ShieldOff } from "lucide-react";
 import { useMemo, useState } from "react";
 

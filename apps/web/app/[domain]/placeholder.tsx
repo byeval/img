@@ -1,6 +1,6 @@
 "use client";
 
-import { STAGGER_CHILD_VARIANTS } from "@dub/utils";
+import { STAGGER_CHILD_VARIANTS } from "@imgpt/utils";
 import va from "@vercel/analytics";
 import { motion } from "framer-motion";
 import { useParams } from "next/navigation";

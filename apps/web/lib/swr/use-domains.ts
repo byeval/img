@@ -1,5 +1,5 @@
 import { DomainProps } from "@/lib/types";
-import { DUB_DOMAINS, SHORT_DOMAIN, fetcher } from "@dub/utils";
+import { DUB_DOMAINS, SHORT_DOMAIN, fetcher } from "@imgpt/utils";
 import { useParams } from "next/navigation";
 import useSWR from "swr";
 import useProject from "./use-project";

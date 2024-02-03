@@ -20,7 +20,7 @@ import {
   TooltipContent,
   useIntersectionObserver,
   useRouterStuff,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   GOOGLE_FAVICON_URL,
   HOME_DOMAIN,
@@ -30,7 +30,7 @@ import {
   linkConstructor,
   nFormatter,
   timeAgo,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import {
   Archive,

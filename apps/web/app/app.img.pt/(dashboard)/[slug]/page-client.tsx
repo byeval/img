@@ -9,7 +9,7 @@ import {
   Tooltip,
   TooltipContent,
   useRouterStuff,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import useProject from "@/lib/swr/use-project";
 import { ChevronDown, FilePlus2, Sheet } from "lucide-react";
 import { useRouter } from "next/navigation";

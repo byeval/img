@@ -1,4 +1,4 @@
-import { Button, CopyButton, Logo, Modal } from "@dub/ui";
+import { Button, CopyButton, Logo, Modal } from "@imgpt/ui";
 import {
   Dispatch,
   SetStateAction,

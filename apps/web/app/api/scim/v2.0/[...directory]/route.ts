@@ -1,5 +1,5 @@
 import { inviteUser } from "@/lib/api/users";
-import { getSearchParams } from "@dub/utils";
+import { getSearchParams } from "@imgpt/utils";
 import jackson from "@/lib/jackson";
 import prisma from "@/lib/prisma";
 import { ProjectProps } from "@/lib/types";

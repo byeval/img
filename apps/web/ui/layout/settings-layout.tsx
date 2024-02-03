@@ -1,4 +1,4 @@
-import { MaxWidthWrapper } from "@dub/ui";
+import { MaxWidthWrapper } from "@imgpt/ui";
 import { ReactNode } from "react";
 import NavLink from "@/ui/layout/settings-nav-link";
 

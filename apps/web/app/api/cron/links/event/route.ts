@@ -7,7 +7,7 @@ import {
   GOOGLE_FAVICON_URL,
   getApexDomain,
   log,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { sendEmail } from "emails";
 import LinksLimitAlert from "emails/links-limit";
 

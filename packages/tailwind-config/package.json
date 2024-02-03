@@ -1,7 +1,7 @@
 {
-  "name": "@dub/tailwind-config",
+  "name": "@imgpt/tailwind-config",
   "description": "Tailwindcss config for img.pt",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "main": "index.ts",
   "types": "index.ts",
   "devDependencies": {
@@ -13,17 +13,8 @@
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-radix": "^2.8.0"
   },
-  "author": "Steven Tey <stevensteel97@gmail.com>",
   "homepage": "https://img.pt",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/steven-tey/dub.git"
-  },
-  "bugs": {
-    "url": "https://github.com/steven-tey/dub/issues"
-  },
   "keywords": [
-    "dub",
     "img.pt",
     "tailwind",
     "tailwindcss"

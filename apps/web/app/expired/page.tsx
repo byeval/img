@@ -1,5 +1,5 @@
-import { Background, Footer, Nav } from "@dub/ui";
-import { constructMetadata } from "@dub/utils";
+import { Background, Footer, Nav } from "@imgpt/ui";
+import { constructMetadata } from "@imgpt/utils";
 import { TimerOff } from "lucide-react";
 
 export const runtime = "edge";

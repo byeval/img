@@ -1,4 +1,4 @@
-import { DUB_LOGO } from "@dub/utils";
+import { DUB_LOGO } from "@imgpt/utils";
 import {
   Body,
   Container,

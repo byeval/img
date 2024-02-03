@@ -1,6 +1,6 @@
 "use client";
 
-import { APP_DOMAIN, HIDE_BACKGROUND_SEGMENTS, cn, fetcher } from "@dub/utils";
+import { APP_DOMAIN, HIDE_BACKGROUND_SEGMENTS, cn, fetcher } from "@imgpt/utils";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import va from "@vercel/analytics";
 import Link from "next/link";

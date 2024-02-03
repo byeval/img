@@ -10,7 +10,7 @@ import {
   API_HOSTNAMES,
   APP_HOSTNAMES,
   DEFAULT_REDIRECTS,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import AdminMiddleware from "./lib/middleware/admin";
 

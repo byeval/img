@@ -1,4 +1,4 @@
-import { constructMetadata } from "@dub/utils";
+import { constructMetadata } from "@imgpt/utils";
 import BanUser from "./components/ban";
 import ImpersonateProject from "./components/impersonate-project";
 import ImpersonateUser from "./components/impersonate-user";

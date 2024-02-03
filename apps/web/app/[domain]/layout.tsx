@@ -1,4 +1,4 @@
-import { NavMobile, Nav, Footer } from "@dub/ui";
+import { NavMobile, Nav, Footer } from "@imgpt/ui";
 
 export default function CustomDomainLayout(props) {
   return (

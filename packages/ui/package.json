@@ -1,7 +1,7 @@
 {
-  "name": "@dub/ui",
-  "description": "UI components for Dub.co",
-  "version": "0.0.43",
+  "name": "@imgpt/ui",
+  "description": "UI components for img.pt",
+  "version": "0.0.1",
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -21,8 +21,8 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@dub/tailwind-config": "workspace:*",
-    "@dub/utils": "workspace:*",
+    "@imgpt/tailwind-config": "workspace:*",
+    "@imgpt/utils": "workspace:*",
     "@types/js-cookie": "^3.0.6",
     "@types/react": "^18.2.47",
     "autoprefixer": "^10.4.16",

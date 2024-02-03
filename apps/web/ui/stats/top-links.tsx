@@ -1,5 +1,5 @@
-import { LoadingSpinner, Modal, useRouterStuff } from "@dub/ui";
-import { fetcher, linkConstructor } from "@dub/utils";
+import { LoadingSpinner, Modal, useRouterStuff } from "@imgpt/ui";
+import { fetcher, linkConstructor } from "@imgpt/utils";
 import { Maximize } from "lucide-react";
 import { useContext, useState } from "react";
 import useSWR from "swr";

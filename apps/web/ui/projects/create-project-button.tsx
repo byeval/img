@@ -2,9 +2,9 @@
 
 import useProjects from "@/lib/swr/use-projects";
 import { ModalContext } from "@/ui/modals/provider";
-import { Button } from "@dub/ui";
-import { TooltipContent } from "@dub/ui/src/tooltip";
-import { FREE_PROJECTS_LIMIT, HOME_DOMAIN } from "@dub/utils";
+import { Button } from "@imgpt/ui";
+import { TooltipContent } from "@imgpt/ui/src/tooltip";
+import { FREE_PROJECTS_LIMIT, HOME_DOMAIN } from "@imgpt/utils";
 import { useContext } from "react";
 
 export default function CreateProjectButton() {

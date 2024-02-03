@@ -1,7 +1,7 @@
 "use client";
 
 import { BlurImage } from "@/ui/shared/blur-image";
-import { MaxWidthWrapper, useRouterStuff } from "@dub/ui";
+import { MaxWidthWrapper, useRouterStuff } from "@imgpt/ui";
 import { Lock } from "lucide-react";
 import useProject from "@/lib/swr/use-project";
 

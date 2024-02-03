@@ -1,5 +1,5 @@
-import { LoadingSpinner, useMediaQuery } from "@dub/ui";
-import { fetcher, nFormatter } from "@dub/utils";
+import { LoadingSpinner, useMediaQuery } from "@imgpt/ui";
+import { fetcher, nFormatter } from "@imgpt/utils";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { localPoint } from "@visx/event";
 import { GridRows } from "@visx/grid";

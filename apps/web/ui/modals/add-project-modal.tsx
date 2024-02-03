@@ -5,8 +5,8 @@ import {
   Logo,
   Modal,
   useRouterStuff,
-} from "@dub/ui";
-import { HOME_DOMAIN, generateDomainFromName } from "@dub/utils";
+} from "@imgpt/ui";
+import { HOME_DOMAIN, generateDomainFromName } from "@imgpt/utils";
 import slugify from "@sindresorhus/slugify";
 import va from "@vercel/analytics";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";

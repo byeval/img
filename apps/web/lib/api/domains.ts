@@ -5,7 +5,7 @@ import {
   getDomainWithoutWWW,
   isIframeable,
   validDomainRegex,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import cloudinary from "cloudinary";
 
 export const validateDomain = async (domain: string) => {

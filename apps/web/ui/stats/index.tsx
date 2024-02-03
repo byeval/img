@@ -24,7 +24,7 @@ import Referer from "./referer";
 import Toggle from "./toggle";
 import Feedback from "./feedback";
 import useSWR from "swr";
-import { fetcher } from "@dub/utils";
+import { fetcher } from "@imgpt/utils";
 import { VALID_STATS_FILTERS } from "@/lib/stats";
 
 export const StatsContext = createContext<{

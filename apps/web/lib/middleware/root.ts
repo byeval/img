@@ -1,6 +1,6 @@
 import { recordClick } from "@/lib/tinybird";
 import { formatRedisDomain, redis } from "@/lib/upstash";
-import { DUB_HEADERS } from "@dub/utils";
+import { DUB_HEADERS } from "@imgpt/utils";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { parse } from "./utils";
 import { RedisDomainProps } from "../types";

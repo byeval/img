@@ -1,4 +1,4 @@
-import { getDomainWithoutWWW, isIframeable } from "@dub/utils";
+import { getDomainWithoutWWW, isIframeable } from "@imgpt/utils";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import {

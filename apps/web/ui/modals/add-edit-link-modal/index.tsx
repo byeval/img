@@ -11,7 +11,7 @@ import {
   Modal,
   TooltipContent,
   useRouterStuff,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   DEFAULT_LINK_PROPS,
   GOOGLE_FAVICON_URL,
@@ -23,7 +23,7 @@ import {
   isValidUrl,
   linkConstructor,
   truncate,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import punycode from "punycode/";

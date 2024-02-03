@@ -1,5 +1,5 @@
 import { ratelimit } from "@/lib/upstash";
-import { LOCALHOST_IP, isValidUrl } from "@dub/utils";
+import { LOCALHOST_IP, isValidUrl } from "@imgpt/utils";
 import { ipAddress } from "@vercel/edge";
 import { getToken } from "next-auth/jwt";
 import { NextRequest } from "next/server";

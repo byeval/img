@@ -4,7 +4,7 @@ import { Link as LinkProps } from "@prisma/client";
 import { PlanProps, ProjectProps } from "../types";
 import { getServerSession } from "next-auth/next";
 import { createHash } from "crypto";
-import { API_DOMAIN, getSearchParams, isDubDomain } from "@dub/utils";
+import { API_DOMAIN, getSearchParams, isDubDomain } from "@imgpt/utils";
 import { ratelimit } from "../upstash";
 import { exceededLimitError } from "../api/errors";
 import { isAdmin } from "app/admin.img.pt/actions";

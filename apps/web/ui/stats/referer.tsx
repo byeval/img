@@ -1,6 +1,6 @@
 import { BlurImage } from "@/ui/shared/blur-image";
-import { LoadingSpinner, Modal, useRouterStuff } from "@dub/ui";
-import { GOOGLE_FAVICON_URL, fetcher } from "@dub/utils";
+import { LoadingSpinner, Modal, useRouterStuff } from "@imgpt/ui";
+import { GOOGLE_FAVICON_URL, fetcher } from "@imgpt/utils";
 import { Link2, Maximize } from "lucide-react";
 import { useContext, useState } from "react";
 import useSWR from "swr";

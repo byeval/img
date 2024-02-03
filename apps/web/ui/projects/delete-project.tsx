@@ -1,8 +1,8 @@
 "use client";
 
 import useProject from "@/lib/swr/use-project";
-import { Button } from "@dub/ui";
-import { cn } from "@dub/utils";
+import { Button } from "@imgpt/ui";
+import { cn } from "@imgpt/utils";
 import { useDeleteProjectModal } from "@/ui/modals/delete-project-modal";
 
 export default function DeleteProject() {

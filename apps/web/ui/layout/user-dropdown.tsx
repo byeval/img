@@ -1,8 +1,8 @@
 "use client";
 
 import { Logout } from "@/ui/shared/icons";
-import { Avatar, Badge, IconMenu, LoadingCircle, Popover } from "@dub/ui";
-import { HOME_DOMAIN } from "@dub/utils";
+import { Avatar, Badge, IconMenu, LoadingCircle, Popover } from "@imgpt/ui";
+import { HOME_DOMAIN } from "@imgpt/utils";
 import va from "@vercel/analytics";
 import { Crisp } from "crisp-sdk-web";
 import Cookies from "js-cookie";

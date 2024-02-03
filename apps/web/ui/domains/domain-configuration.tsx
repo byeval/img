@@ -1,5 +1,5 @@
 import { DomainVerificationStatusProps } from "@/lib/types";
-import { getSubdomain } from "@dub/utils";
+import { getSubdomain } from "@imgpt/utils";
 import { useState } from "react";
 
 export default function DomainConfiguration({

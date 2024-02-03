@@ -3,7 +3,7 @@ import {
   GOOGLE_FAVICON_URL,
   constructMetadata,
   getApexDomain,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { unescape } from "html-escaper";
 import { notFound, redirect } from "next/navigation";
 

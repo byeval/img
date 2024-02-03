@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import { Tooltip } from "./tooltip";

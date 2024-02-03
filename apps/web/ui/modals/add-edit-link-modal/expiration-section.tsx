@@ -4,13 +4,13 @@ import {
   SimpleTooltipContent,
   Switch,
   useRouterStuff,
-} from "@dub/ui";
-import { TooltipContent } from "@dub/ui/src/tooltip";
+} from "@imgpt/ui";
+import { TooltipContent } from "@imgpt/ui/src/tooltip";
 import {
   FADE_IN_ANIMATION_SETTINGS,
   HOME_DOMAIN,
   getDateTimeLocal,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";

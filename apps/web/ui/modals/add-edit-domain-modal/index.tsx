@@ -11,8 +11,8 @@ import {
   Tooltip,
   TooltipContent,
   useRouterStuff,
-} from "@dub/ui";
-import { FADE_IN_ANIMATION_SETTINGS, capitalize } from "@dub/utils";
+} from "@imgpt/ui";
+import { FADE_IN_ANIMATION_SETTINGS, capitalize } from "@imgpt/utils";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
@@ -331,7 +331,7 @@ function AddEditDomainModal({
                   name="placeholder"
                   id="placeholder"
                   className="block w-full rounded-md border-gray-300 text-gray-900 placeholder-gray-300 focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm"
-                  placeholder="https://dub.co/help/article/what-is-dub"
+                  placeholder="https://img.pt/help/article/what-is-dub"
                   value={placeholder}
                   onChange={(e) =>
                     setData({ ...data, placeholder: e.target.value })

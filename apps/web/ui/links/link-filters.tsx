@@ -11,11 +11,11 @@ import {
   Popover,
   Switch,
   useRouterStuff,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   SWIPE_REVEAL_ANIMATION_SETTINGS,
   nFormatter,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronRight, Search, Trash, XCircle } from "lucide-react";
 import {

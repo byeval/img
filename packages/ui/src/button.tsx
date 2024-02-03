@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import { ReactNode } from "react";
 import { LoadingSpinner } from "./icons";
 import { Tooltip } from "./tooltip";

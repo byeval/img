@@ -1,4 +1,4 @@
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import * as React from "react";

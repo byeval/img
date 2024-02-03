@@ -1,4 +1,4 @@
-import { cn } from "@dub/utils";
+import { cn } from "@imgpt/utils";
 
 export default function LogoType({ className }: { className?: string }) {
   return (

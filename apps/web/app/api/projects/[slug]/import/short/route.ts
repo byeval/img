@@ -3,7 +3,7 @@ import { withAuth } from "@/lib/auth";
 import { qstash } from "@/lib/cron";
 import prisma from "@/lib/prisma";
 import { redis } from "@/lib/upstash";
-import { APP_DOMAIN_WITH_NGROK, fetchWithTimeout } from "@dub/utils";
+import { APP_DOMAIN_WITH_NGROK, fetchWithTimeout } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 
 // GET /api/projects/[slug]/import/short – get all short.io domains for a project

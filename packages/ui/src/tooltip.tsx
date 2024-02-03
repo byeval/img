@@ -1,6 +1,6 @@
 "use client";
 
-import { nFormatter, timeAgo } from "@dub/utils";
+import { nFormatter, timeAgo } from "@imgpt/utils";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { HelpCircle } from "lucide-react";
 import Link from "next/link";

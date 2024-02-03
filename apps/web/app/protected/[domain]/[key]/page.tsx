@@ -1,5 +1,5 @@
-import { Background, Logo } from "@dub/ui";
-import { constructMetadata, isDubDomain } from "@dub/utils";
+import { Background, Logo } from "@imgpt/ui";
+import { constructMetadata, isDubDomain } from "@imgpt/utils";
 import prisma from "@/lib/prisma";
 import PasswordForm from "./form";
 import { notFound, redirect } from "next/navigation";

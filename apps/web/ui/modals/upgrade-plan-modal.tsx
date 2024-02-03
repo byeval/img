@@ -9,14 +9,14 @@ import {
   Popover,
   Tick,
   useRouterStuff,
-} from "@dub/ui";
+} from "@imgpt/ui";
 import {
   HOME_DOMAIN,
   SELF_SERVE_PAID_PLANS,
   STAGGER_CHILD_VARIANTS,
   capitalize,
   cn,
-} from "@dub/utils";
+} from "@imgpt/utils";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -105,7 +105,7 @@ function UpgradePlanModal({
           className="text-center text-sm text-gray-500"
           variants={STAGGER_CHILD_VARIANTS}
         >
-          Enjoy higher limits and extra features with Dub.co {currentPlan.name}
+          Enjoy higher limits and extra features with img.pt {currentPlan.name}
         </motion.p>
       </motion.div>
       <div className="bg-gray-50 px-4 py-6 text-left sm:px-16">

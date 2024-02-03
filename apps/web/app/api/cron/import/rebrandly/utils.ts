@@ -3,7 +3,7 @@ import { qstash } from "@/lib/cron";
 import prisma from "@/lib/prisma";
 import { redis } from "@/lib/upstash";
 import { randomBadgeColor } from "@/ui/links/tag-badge";
-import { APP_DOMAIN_WITH_NGROK } from "@dub/utils";
+import { APP_DOMAIN_WITH_NGROK } from "@imgpt/utils";
 import { sendEmail } from "emails";
 import LinksImported from "emails/links-imported";
 

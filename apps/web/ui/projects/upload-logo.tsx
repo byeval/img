@@ -1,7 +1,7 @@
 "use client";
 
 import useProject from "@/lib/swr/use-project";
-import { Button } from "@dub/ui";
+import { Button } from "@imgpt/ui";
 import { UploadCloud } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";

@@ -1,6 +1,6 @@
 import { withAuth } from "@/lib/auth";
 import { stripe } from "@/lib/stripe";
-import { APP_DOMAIN } from "@dub/utils";
+import { APP_DOMAIN } from "@imgpt/utils";
 import { NextResponse } from "next/server";
 
 // POST /api/projects/[slug]/billing/manage - create a Stripe billing portal session

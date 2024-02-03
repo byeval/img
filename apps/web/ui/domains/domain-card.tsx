@@ -6,8 +6,8 @@ import {
   ExternalLink,
   XCircleFill,
 } from "@/ui/shared/icons";
-import { Button, LoadingCircle, LoadingDots, NumberTooltip } from "@dub/ui";
-import { capitalize, fetcher, nFormatter, truncate } from "@dub/utils";
+import { Button, LoadingCircle, LoadingDots, NumberTooltip } from "@imgpt/ui";
+import { capitalize, fetcher, nFormatter, truncate } from "@imgpt/utils";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import punycode from "punycode/";

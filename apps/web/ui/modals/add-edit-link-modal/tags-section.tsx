@@ -1,7 +1,7 @@
 import useTags from "@/lib/swr/use-tags";
 import TagBadge from "@/ui/links/tag-badge";
-import { LoadingCircle, SimpleTooltipContent, Tooltip } from "@dub/ui";
-import { HOME_DOMAIN } from "@dub/utils";
+import { LoadingCircle, SimpleTooltipContent, Tooltip } from "@imgpt/ui";
+import { HOME_DOMAIN } from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { Command, useCommandState } from "cmdk";
 import { Check, ChevronDown, Tag, X } from "lucide-react";

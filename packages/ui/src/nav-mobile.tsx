@@ -1,6 +1,6 @@
 "use client";
 
-import { APP_DOMAIN, cn, fetcher } from "@dub/utils";
+import { APP_DOMAIN, cn, fetcher } from "@imgpt/utils";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";

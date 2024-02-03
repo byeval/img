@@ -10,7 +10,7 @@ import {
   validateDomain,
 } from "@/lib/api/domains";
 import { NextResponse } from "next/server";
-import { DUB_PROJECT_ID, isDubDomain } from "@dub/utils";
+import { DUB_PROJECT_ID, isDubDomain } from "@imgpt/utils";
 
 // GET /api/projects/[slug]/domains/[domain] – get a project's domain
 export const GET = withAuth(async ({ domain, project }) => {

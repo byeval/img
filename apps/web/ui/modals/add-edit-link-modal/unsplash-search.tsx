@@ -1,5 +1,5 @@
-import { LoadingSpinner } from "@dub/ui";
-import { fetcher } from "@dub/utils";
+import { LoadingSpinner } from "@imgpt/ui";
+import { fetcher } from "@imgpt/utils";
 import { type Link as LinkProps } from "@prisma/client";
 import { Dispatch, SetStateAction, useState } from "react";
 import { toast } from "sonner";

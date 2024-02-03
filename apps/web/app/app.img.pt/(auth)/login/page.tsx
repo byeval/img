@@ -1,5 +1,5 @@
-import { Button, Logo } from "@dub/ui";
-import { HOME_DOMAIN, constructMetadata } from "@dub/utils";
+import { Button, Logo } from "@imgpt/ui";
+import { HOME_DOMAIN, constructMetadata } from "@imgpt/utils";
 import { Suspense } from "react";
 import LoginForm from "./form";
 
