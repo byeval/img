@@ -1,4 +1,4 @@
-import { DUB_LOGO, DUB_THUMBNAIL } from "@imgpt/utils";
+import { GPT_LOGO, GPT_THUMBNAIL } from "@imgpt/utils";
 import {
   Body,
   Container,
@@ -33,7 +33,7 @@ export default function RebrandEmail({
           <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-gray-200 px-10 py-5">
             <Section className="mt-8">
               <Img
-                src={DUB_LOGO}
+                src={GPT_LOGO}
                 width="40"
                 height="40"
                 alt="Dub"
@@ -44,7 +44,7 @@ export default function RebrandEmail({
               Dub​.sh is rebranding to Dub​.co
             </Heading>
             <Section className="my-8">
-              <Img src={DUB_THUMBNAIL} alt="Dub" className="max-w-[500px]" />
+              <Img src={GPT_THUMBNAIL} alt="Dub" className="max-w-[500px]" />
             </Section>
             <Text className="text-sm leading-6 text-black">
               Hey{name ? ` ${name}` : " there"}!

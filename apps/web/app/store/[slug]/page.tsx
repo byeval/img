@@ -1,7 +1,8 @@
 import { getGizmo } from "@/lib/api/gizmos";
-import { API_DOMAIN } from "@imgpt/utils";
+import { Sparkles } from "lucide-react";
 import Image from "next/image";
-import { WebApplication, WithContext } from "schema-dts";
+import Link from "next/link";
+import { BreadcrumbList, WebApplication, WithContext } from "schema-dts";
 
 const ToolDescriptionMap: any = {
   python:
@@ -19,6 +20,7 @@ export async function generateMetadata({
   const { slug } = params;
   const id = slug.split("-").reverse()[0];
   const gizmo = await getGizmo({ id });
+
   if (!gizmo) {
     return {
       title: "404",
@@ -37,8 +39,17 @@ export async function generateMetadata({
 
   return {
     title: name,
-    description: [description, welcomeMessage].join(" "),
-    keywords: [model, platform, "imgpt"],
+    description: [description, welcomeMessage].join(", "),
+    keywords: [
+      model,
+      platform,
+      "imgpt",
+      "chatgpt",
+      "gpt store",
+      "custom gpt",
+      "gpt-3.5",
+      "gpts",
+    ],
     opengraph: {
       title: name,
       url: `https://img.pt/store/${slug}`,
@@ -80,34 +91,55 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
 
   const starterItems = JSON.parse(promptStarters!);
   const toolItems = JSON.parse(tools!);
-  const tagItems = JSON.parse(tags!);
   const categoryItems = JSON.parse(categories!);
   const gizmoId = gizmoSlug.split("-").slice(0, 2).join("-");
   const chatgptUrl = `https://chat.openai.com/g/${gizmoId}?ref=img.pt`;
 
-  const jsonLd: WithContext<WebApplication> = {
+  const appJSON: WithContext<WebApplication> = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name,
     description: description!,
     applicationCategory: categoryItems.join(",")!,
-    applicationSubCategory: tagItems.join(",")!,
     url: `https://img.pt/store/${slug}`,
     datePublished: createdAt.toISOString(),
     dateModified: updatedAt.toISOString(),
     image: profilePictureUrl,
-    author: {
-      "@type": "Person",
-      name: inventor!.name,
-      url: inventor!.website || undefined,
-    },
+    author: [
+      {
+        "@type": "Person",
+        name: inventor!.name,
+        url: `https://img.pt/store/user/${inventor?.id}`,
+      },
+    ],
+  };
+
+  const breadJSON: WithContext<BreadcrumbList> = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Store",
+        item: "https://img.pt/store",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name,
+        item: `https://img.pt/store/${slug}`,
+      },
+    ],
   };
 
   return (
-    <main className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 lg:flex-row lg:px-20">
+    <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 lg:flex-row lg:px-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([appJSON, breadJSON]),
+        }}
       />
       <div className="flex flex-1 flex-col gap-4">
         <div className="bg-card text-card-foreground flex flex-col gap-4 rounded-lg border p-5 shadow-sm lg:flex-row ">
@@ -184,24 +216,33 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
             Powered by {platform}
           </div>
           <div className="flex items-center gap-1.5 pt-1 text-2xl font-medium">
-            <Image width={24} height={24} src="/star.svg" alt="power" />
+            <Sparkles />
             {model}
           </div>
         </div>
       </div>
       <div className="w-full lg:w-[300px]">
-        <div className="bg-card text-card-foreground w-full rounded-lg border p-5 shadow-sm">
-          <h3 className="text-md mb-4 font-medium">Author</h3>
+        <div className="bg-card text-card-foreground flex w-full flex-col gap-4 rounded-lg border p-5 shadow-sm">
+          <h3 className="text-md font-medium">Author</h3>
           <div className="flex flex-col space-y-2">
             <strong>name:</strong>
             {inventor!.name}
           </div>
-          <div className="flex flex-col space-y-2">
-            <strong>website:</strong>
-            {inventor!.website}
-          </div>
+          {inventor?.website && (
+            <div className="flex flex-col space-y-2">
+              <strong>website:</strong>
+              <Link target="_blank" href={inventor.website}>
+                {inventor!.website}
+              </Link>
+            </div>
+          )}
+          <Link href={`/store/user/${inventor!.id}`}>
+            <button className="focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+              View more GPTs created by he/she
+            </button>
+          </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

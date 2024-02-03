@@ -2,7 +2,7 @@ import { detectBot, getFinalUrl, parse } from "@/lib/middleware/utils";
 import { recordClick } from "@/lib/tinybird";
 import { formatRedisLink, ratelimit, redis } from "@/lib/upstash";
 import {
-  DUB_HEADERS,
+  GPT_HEADERS,
   LEGAL_PROJECT_ID,
   LOCALHOST_GEO_DATA,
   LOCALHOST_IP,
@@ -63,7 +63,7 @@ export default async function LinkMiddleware(
     if (!linkData) {
       // short link not found, redirect to root
       // TODO: log 404s (https://github.com/dubinc/dub/issues/559)
-      return NextResponse.redirect(new URL("/", req.url), DUB_HEADERS);
+      return NextResponse.redirect(new URL("/", req.url), GPT_HEADERS);
     }
 
     // format link to fit the RedisLinkProps interface
@@ -152,30 +152,30 @@ export default async function LinkMiddleware(
     if (iframeable) {
       return NextResponse.rewrite(
         new URL(`/rewrite/${url}`, req.url),
-        DUB_HEADERS,
+        GPT_HEADERS,
       );
     } else {
       // if link is not iframeable, use Next.js rewrite instead
-      return NextResponse.rewrite(url, DUB_HEADERS);
+      return NextResponse.rewrite(url, GPT_HEADERS);
     }
 
     // redirect to iOS link if it is specified and the user is on an iOS device
   } else if (ios && userAgent(req).os?.name === "iOS") {
-    return NextResponse.redirect(getFinalUrl(ios, { req }), DUB_HEADERS);
+    return NextResponse.redirect(getFinalUrl(ios, { req }), GPT_HEADERS);
 
     // redirect to Android link if it is specified and the user is on an Android device
   } else if (android && userAgent(req).os?.name === "Android") {
-    return NextResponse.redirect(getFinalUrl(android, { req }), DUB_HEADERS);
+    return NextResponse.redirect(getFinalUrl(android, { req }), GPT_HEADERS);
 
     // redirect to geo-specific link if it is specified and the user is in the specified country
   } else if (geo && country && country in geo) {
     return NextResponse.redirect(
       getFinalUrl(geo[country], { req }),
-      DUB_HEADERS,
+      GPT_HEADERS,
     );
 
     // regular redirect
   } else {
-    return NextResponse.redirect(getFinalUrl(url, { req }), DUB_HEADERS);
+    return NextResponse.redirect(getFinalUrl(url, { req }), GPT_HEADERS);
   }
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Search } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { API_DOMAIN } from "@imgpt/utils";

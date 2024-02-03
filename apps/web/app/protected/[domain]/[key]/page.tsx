@@ -1,5 +1,5 @@
 import { Background, Logo } from "@imgpt/ui";
-import { constructMetadata, isDubDomain } from "@imgpt/utils";
+import { constructMetadata, isGptDomain } from "@imgpt/utils";
 import prisma from "@/lib/prisma";
 import PasswordForm from "./form";
 import { notFound, redirect } from "next/navigation";
@@ -39,10 +39,10 @@ export async function generateMetadata({
   }
 
   return constructMetadata({
-    title: isDubDomain(domain) || link.project?.plan === "free" ? `${title} - img.pt` : title,
+    title: isGptDomain(domain) || link.project?.plan === "free" ? `${title} - img.pt` : title,
     description,
     image,
-    ...(!isDubDomain(domain) &&
+    ...(!isGptDomain(domain) &&
       link.project?.plan !== "free" &&
       link.project?.logo && {
         icons: link.project.logo,
@@ -113,7 +113,7 @@ export default async function PasswordProtectedLinkPage({
       <Background />
       <div className="w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
-          {!isDubDomain(domain) &&
+          {!isGptDomain(domain) &&
           link.project?.plan !== "free" &&
           link.project?.logo ? (
             <img

@@ -83,7 +83,6 @@ export const ADMIN_HOSTNAMES = new Set([
 
 export const DEFAULT_REDIRECTS = {
   home: "https://img.pt",
-  dub: "https://img.pt",
   signin: "https://app.img.pt/login",
   login: "https://app.img.pt/login",
   register: "https://app.img.pt/register",
@@ -93,10 +92,9 @@ export const DEFAULT_REDIRECTS = {
   links: "https://app.img.pt/links",
   settings: "https://app.img.pt/settings",
   welcome: "https://app.img.pt/welcome",
-  discord: "https://twitter.com/dubdotco", // placeholder for now
 };
 
-export const DUB_HEADERS = {
+export const GPT_HEADERS = {
   headers: {
     "x-powered-by": "img.pt - chatgpt link shortner",
   },
@@ -105,11 +103,11 @@ export const DUB_HEADERS = {
 export const GOOGLE_FAVICON_URL =
   "https://www.google.com/s2/favicons?sz=64&domain_url=";
 
-export const DUB_LOGO = "https://d2vwwcvoksz7ty.cloudfront.net/logo.png";
-export const DUB_THUMBNAIL =
+export const GPT_LOGO = "https://d2vwwcvoksz7ty.cloudfront.net/logo.png";
+export const GPT_THUMBNAIL =
   "https://d2vwwcvoksz7ty.cloudfront.net/thumbnail.png";
 
-export const DUB_PROJECT_ID = "cl7pj5kq4006835rbjlt2ofka";
+export const IMGPT_PROJECT_ID = "cl7pj5kq4006835rbjlt2ofka";
 export const LEGAL_PROJECT_ID = "clrflia0j0000vs7sqfhz9c7q";
 export const LEGAL_USER_ID = "clqei1lgc0000vsnzi01pbf47";
 
@@ -121,7 +119,7 @@ export const HIDE_BACKGROUND_SEGMENTS = [
   "abuse",
 ];
 
-export const DUB_DOMAINS = [
+export const GPT_DOMAINS = [
   {
     id: "clce1z7ch00j0rbstbjufva4j",
     slug: SHORT_DOMAIN,
@@ -130,10 +128,10 @@ export const DUB_DOMAINS = [
     archived: false,
     target: `https://${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
     type: "redirect",
-    placeholder: "https://img.pt/help/article/what-is-dub",
+    placeholder: "https://img.pt/help/article/what-is-gpt",
     clicks: 0,
     allowedHostnames: [],
-    projectId: DUB_PROJECT_ID,
+    projectId: IMGPT_PROJECT_ID,
   },
 ];
 

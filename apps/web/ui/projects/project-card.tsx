@@ -5,7 +5,7 @@ import { BlurImage } from "@/ui/shared/blur-image";
 import { CheckCircleFill, XCircleFill } from "@/ui/shared/icons";
 import { Badge, InlineSnippet, NumberTooltip, Tooltip } from "@imgpt/ui";
 import {
-  DUB_DOMAINS,
+  GPT_DOMAINS,
   GOOGLE_FAVICON_URL,
   HOME_DOMAIN,
   cn,
@@ -43,8 +43,8 @@ export default function ProjectCard({
   const isMigratedProject = user?.migratedProject === id;
 
   const defaultDomains = metadata?.defaultDomains
-    ? DUB_DOMAINS.filter((d) => metadata?.defaultDomains?.includes(d.slug))
-    : DUB_DOMAINS;
+    ? GPT_DOMAINS.filter((d) => metadata?.defaultDomains?.includes(d.slug))
+    : GPT_DOMAINS;
 
   const domains = projectDomains.length > 0 ? projectDomains : defaultDomains;
 

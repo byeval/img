@@ -1,6 +1,6 @@
 import slugify from "@sindresorhus/slugify";
 import {
-  DUB_DOMAINS,
+  GPT_DOMAINS,
   SECOND_LEVEL_DOMAINS,
   SPECIAL_APEX_DOMAINS,
   ccTLDs,
@@ -86,6 +86,6 @@ export const getDomainWithoutWWW = (url: string) => {
   }
 };
 
-export const isDubDomain = (domain: string) => {
-  return DUB_DOMAINS.some((d) => d.slug === domain);
+export const isGptDomain = (domain: string) => {
+  return GPT_DOMAINS.some((d) => d.slug === domain);
 };

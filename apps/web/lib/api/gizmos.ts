@@ -52,6 +52,19 @@ export async function searchGizmos({
   }));
 }
 
+export async function queryGizmosByInventor({ inventorId }) {
+  const gizmos = await prisma.gizmo.findMany({
+    where: {
+      inventorId,
+    },
+  });
+
+  return gizmos.map((gizmo) => ({
+    ...gizmo,
+    slug: `${gizmo.slug.split("-").slice(2).join("-")}-${gizmo.id}`,
+  }));
+}
+
 export async function getGizmo({ id }) {
   const gizmo = await prisma.gizmo.findUnique({
     where: {

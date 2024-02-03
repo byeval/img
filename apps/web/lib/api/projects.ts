@@ -3,7 +3,7 @@ import prisma from "@/lib/prisma";
 import { cancelSubscription } from "@/lib/stripe";
 import cloudinary from "cloudinary";
 import { ProjectProps } from "../types";
-import { DUB_DOMAINS } from "@imgpt/utils";
+import { GPT_DOMAINS } from "@imgpt/utils";
 import { redis } from "../upstash";
 
 export async function deleteProject(
@@ -22,7 +22,7 @@ export async function deleteProject(
       where: {
         projectId: project.id,
         domain: {
-          in: DUB_DOMAINS.map((domain) => domain.slug),
+          in: GPT_DOMAINS.map((domain) => domain.slug),
         },
       },
       select: {

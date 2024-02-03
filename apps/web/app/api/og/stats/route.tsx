@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { ImageResponse } from "next/og";
 import { getLinkViaEdge } from "@/lib/planetscale";
 import { getStats } from "@/lib/stats";
-import { DUB_LOGO, nFormatter, truncate } from "@imgpt/utils";
+import { GPT_LOGO, nFormatter, truncate } from "@imgpt/utils";
 
 export const runtime = "edge";
 
@@ -54,7 +54,7 @@ export async function GET(req: NextRequest) {
         }}
       >
         <img
-          src={DUB_LOGO}
+          src={GPT_LOGO}
           style={{
             width: "80px",
             height: "80px",

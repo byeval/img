@@ -1,4 +1,4 @@
-import { DUB_PROJECT_ID, isDubDomain } from "@imgpt/utils";
+import { IMGPT_PROJECT_ID, isGptDomain } from "@imgpt/utils";
 import { conn } from "./planetscale";
 
 export type IntervalProps = "1h" | "24h" | "7d" | "30d" | "90d" | "all";
@@ -137,7 +137,7 @@ export const getStats = async ({
   // TODO: remove this logic after #545 merges
   url.searchParams.append(
     "domain",
-    isDubDomain(domain) && !key && projectId !== DUB_PROJECT_ID ? "" : domain,
+    isGptDomain(domain) && !key && projectId !== IMGPT_PROJECT_ID ? "" : domain,
   );
 
   if (key) {

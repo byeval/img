@@ -1,6 +1,6 @@
 import { recordClick } from "@/lib/tinybird";
 import { formatRedisDomain, redis } from "@/lib/upstash";
-import { DUB_HEADERS } from "@imgpt/utils";
+import { GPT_HEADERS } from "@imgpt/utils";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { parse } from "./utils";
 import { RedisDomainProps } from "../types";
@@ -50,13 +50,13 @@ export default async function RootMiddleware(
     if (iframeable) {
       return NextResponse.rewrite(
         new URL(`/rewrite/${url}`, req.url),
-        DUB_HEADERS,
+        GPT_HEADERS,
       );
     } else {
       // if link is not iframeable, use Next.js rewrite instead
-      return NextResponse.rewrite(url, DUB_HEADERS);
+      return NextResponse.rewrite(url, GPT_HEADERS);
     }
   } else {
-    return NextResponse.redirect(url, DUB_HEADERS);
+    return NextResponse.redirect(url, GPT_HEADERS);
   }
 }

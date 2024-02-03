@@ -1,5 +1,5 @@
 import { DomainProps } from "@/lib/types";
-import { DUB_DOMAINS, SHORT_DOMAIN, fetcher } from "@imgpt/utils";
+import { GPT_DOMAINS, SHORT_DOMAIN, fetcher } from "@imgpt/utils";
 import { useParams } from "next/navigation";
 import useSWR from "swr";
 import useProject from "./use-project";
@@ -25,8 +25,8 @@ export default function useDomains({ domain }: { domain?: string } = {}) {
 
   const defaultDomains =
     (projectDefaultDomains &&
-      DUB_DOMAINS.filter((d) => projectDefaultDomains?.includes(d.slug))) ||
-    DUB_DOMAINS;
+      GPT_DOMAINS.filter((d) => projectDefaultDomains?.includes(d.slug))) ||
+    GPT_DOMAINS;
 
   const allDomains = [
     ...(data || []),

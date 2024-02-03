@@ -3,7 +3,7 @@
 import { deleteProject } from "@/lib/api/projects";
 import { getSession, hashToken } from "@/lib/auth";
 import prisma from "@/lib/prisma";
-import { DUB_PROJECT_ID, getDomainWithoutWWW } from "@imgpt/utils";
+import { IMGPT_PROJECT_ID, getDomainWithoutWWW } from "@imgpt/utils";
 import { randomBytes } from "crypto";
 import cloudinary from "cloudinary";
 import { get } from "@vercel/edge-config";
@@ -16,7 +16,7 @@ export async function isAdmin() {
       userId_projectId: {
         // @ts-ignore
         userId: session.user.id,
-        projectId: DUB_PROJECT_ID,
+        projectId: IMGPT_PROJECT_ID,
       },
     },
   });
