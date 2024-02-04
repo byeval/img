@@ -12,7 +12,7 @@ export default function GizmoCard({ gizmo }) {
       <div className="flex w-full flex-grow items-center gap-4 overflow-hidden">
         <div className="h-12 w-12 flex-shrink-0">
           <div className="gizmo-shadow-stroke overflow-hidden rounded-full">
-            <Image
+            <img
               src={gizmo.profilePictureUrl}
               className="bg-token-surface-secondary dark:bg-token-surface-tertiary h-full w-full"
               alt="GPT"
@@ -30,7 +30,7 @@ export default function GizmoCard({ gizmo }) {
           </span>
           <div className="text-token-text-tertiary mt-1 flex items-center gap-1 text-ellipsis whitespace-nowrap pr-1 text-xs">
             <div className="text-token-text-tertiary text-xs text-gray-600">
-              By {gizmo.inventor?.name}
+              By {gizmo.inventor?.name || "anonymous"}
             </div>
           </div>
         </div>

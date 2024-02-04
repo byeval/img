@@ -37,8 +37,10 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 export default async function Inventor({ params }: { params: { id: string } }) {
   const { id } = params;
-  const inventor = await getInventor({ id });
-  const gizmos = await queryGizmosByInventor({ inventorId: id });
+  const [inventor, gizmos] = await Promise.all([
+    getInventor({ id }),
+    queryGizmosByInventor({ inventorId: id }),
+  ]);
 
   const { name } = inventor!;
 
@@ -61,7 +63,7 @@ export default async function Inventor({ params }: { params: { id: string } }) {
       {
         "@type": "ListItem",
         position: 2,
-        name,
+        name: name || "anonymous",
         item: `https://img.pt/store/user/${id}`,
       },
     ],
@@ -76,7 +78,7 @@ export default async function Inventor({ params }: { params: { id: string } }) {
         }}
       />
       <h1 className="mb-2 text-2xl font-semibold leading-7">
-        GPTs Created by {name}
+        GPTs Created by {name || "anonymous"}
       </h1>
       <div className="">
         <div className="grid grid-cols-1 gap-x-1.5 gap-y-1 md:grid-cols-2 md:gap-x-2 md:gap-y-1.5 lg:grid-cols-3 lg:gap-x-3 lg:gap-y-2.5">

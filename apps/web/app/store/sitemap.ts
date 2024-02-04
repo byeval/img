@@ -4,7 +4,7 @@ import { MetadataRoute } from "next";
 export const runtime = "nodejs";
 
 // Google's limit is 50,000 URLs per sitemap
-const URLS_PER_SITEMAP = 30000;
+const URLS_PER_SITEMAP = 10000;
 
 export async function generateSitemaps() {
   const sitemapCount = await prisma.gizmo.count();
