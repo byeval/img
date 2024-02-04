@@ -145,12 +145,7 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
         <div className="bg-card text-card-foreground flex flex-col gap-4 rounded-lg border p-5 shadow-sm lg:flex-row ">
           <div className="mr-4 h-[72px] w-[72px]">
             {profilePictureUrl ? (
-              <Image
-                src={profilePictureUrl}
-                alt={name}
-                width={72}
-                height={72}
-              />
+              <img src={profilePictureUrl} alt={name} width={72} height={72} />
             ) : (
               <svg
                 stroke="currentColor"
