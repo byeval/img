@@ -35,7 +35,9 @@ model Gizmo {
   shareRecipient String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  crawledAt DateTime? @default(now())
   tags String? @db.Text
+  keywords String? @db.Text
   numConversations Int @default(0)
   numUsersInteractedWith Int @default(0)
   numPins Int @default(0)

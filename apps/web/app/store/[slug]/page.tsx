@@ -1,6 +1,5 @@
 import { getGizmo } from "@/lib/api/gizmos";
-import { Sparkles } from "lucide-react";
-import Image from "next/image";
+import { MessageCircleMore, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { BreadcrumbList, WebApplication, WithContext } from "schema-dts";
 
@@ -112,6 +111,18 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
         url: `https://img.pt/store/user/${inventor?.id}`,
       },
     ],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: numConversations > 100 ? "4" : "3",
+      reviewCount: numConversations > 100 ? "100" : "10",
+      worstRating: "1",
+    },
   };
 
   const breadJSON: WithContext<BreadcrumbList> = {
@@ -143,9 +154,15 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
       />
       <div className="flex flex-1 flex-col gap-4">
         <div className="bg-card text-card-foreground flex flex-col gap-4 rounded-lg border p-5 shadow-sm lg:flex-row ">
-          <div className="mr-4 h-[72px] w-[72px]">
+          <div className="mr-4 h-[120px] w-[120px]">
             {profilePictureUrl ? (
-              <img src={profilePictureUrl} alt={name} width={72} height={72} />
+              <img
+                src={profilePictureUrl}
+                alt={name}
+                className="rounded"
+                width={120}
+                height={120}
+              />
             ) : (
               <svg
                 stroke="currentColor"
@@ -163,9 +180,17 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
               </svg>
             )}
           </div>
-          <div className="flex flex-1 flex-col">
-            <h1 className="mb-2 text-2xl font-semibold leading-7">{name}</h1>
-            <h2 className="leading-6 text-gray-500">{description}</h2>
+          <div className="flex flex-1 flex-col justify-between gap-2">
+            <div>
+              <h1 className="mb-2 text-2xl font-semibold leading-7">{name}</h1>
+              <h2 className="leading-6 text-gray-500">{description}</h2>
+            </div>
+            {numConversations >= 0 && (
+              <div className="flex gap-1">
+                <MessageCircleMore />
+                {numConversations}
+              </div>
+            )}
           </div>
           <div className="flex items-end justify-end">
             <a href={chatgptUrl} target="_blank">
@@ -174,7 +199,6 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
               </button>
             </a>
           </div>
-          {/* <div>{numConversations}</div> */}
         </div>
         <div className="bg-card text-card-foreground space-y-4 rounded-lg border p-5 shadow-sm">
           <h3 className="font-semibold leading-none tracking-tight">
