@@ -4,7 +4,7 @@ import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
   const json = readFileSync(
-    "/Users/xuhong/iDev/gpt/gpts/database/daily-inventors.json",
+    "/Users/xuhong/iDev/gpt/gpts-archive/database/daily-inventors.json",
   );
   const data = JSON.parse(json.toString());
   const ids = Object.keys(data);
