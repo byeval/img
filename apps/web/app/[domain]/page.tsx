@@ -8,12 +8,8 @@ export async function generateMetadata({
 }: {
   params: { domain: string };
 }) {
-  const title = `${params.domain.toUpperCase()} - A ${
-    process.env.NEXT_PUBLIC_APP_NAME
-  } Custom Domain`;
-  const description = `${params.domain.toUpperCase()} is a custom domain on ${
-    process.env.NEXT_PUBLIC_APP_NAME
-  } - an open-source link management tool for modern marketing teams to create, share, and track short links.`;
+  const title = `imG.PT – Free ChatGPT Custom GPTs Link Shortener.`;
+  const description = `imG.PT is a free URL shortener for your Custom GPTs, and get featured on the GPT store at img.pt/store.`;
 
   return constructMetadata({
     title,

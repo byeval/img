@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { HOME_DOMAIN } from "../constants";
 
 export function constructMetadata({
-  title = `${process.env.NEXT_PUBLIC_APP_NAME} - Open-source gpt link shortener, and get featured in our gpt store`,
-  description = `${process.env.NEXT_PUBLIC_APP_NAME} is the open-source gpt link shortener service, provide user to share, and track gpts links.`,
+  title = `imG.PT – Free ChatGPT Custom GPTs Link Shortener.`,
+  description = `imG.PT is a free URL shortener for your custom GPTs, and get featured on the GPT store at img.pt/store.`,
   image = "https://img.pt/_static/thumbnail.png",
   icons = [
     {
