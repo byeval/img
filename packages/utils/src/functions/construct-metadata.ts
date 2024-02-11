@@ -9,19 +9,19 @@ export function constructMetadata({
     {
       rel: "apple-touch-icon",
       sizes: "32x32",
-      url: "/apple-touch-icon.png",
+      url: "/logo-180.png",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "/favicon-32x32.png",
+      url: "/logo-32.png",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "/favicon-16x16.png",
+      url: "/logo-16.png",
     },
   ],
   noIndex = false,

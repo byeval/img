@@ -52,7 +52,6 @@
     "use-debounce": "^8.0.4",
     "vaul": "^0.8.0"
   },
-  "author": "Steven Tey <stevensteel97@gmail.com>",
   "homepage": "https://img.pt",
   "repository": {
     "type": "git",

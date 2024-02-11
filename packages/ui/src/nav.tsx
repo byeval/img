@@ -1,13 +1,17 @@
 "use client";
 
-import { APP_DOMAIN, HIDE_BACKGROUND_SEGMENTS, cn, fetcher } from "@imgpt/utils";
+import {
+  APP_DOMAIN,
+  HIDE_BACKGROUND_SEGMENTS,
+  cn,
+  fetcher,
+} from "@imgpt/utils";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import va from "@vercel/analytics";
 import Link from "next/link";
 import { useParams, useSelectedLayoutSegment } from "next/navigation";
 import useSWR from "swr";
 import { useScroll } from "./hooks";
-import { LogoType } from "./icons";
 import { MaxWidthWrapper } from "./max-width-wrapper";
 
 export const navItems = [
@@ -58,7 +62,7 @@ export function Nav() {
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link href="https://img.pt">
-              <LogoType />
+              <img className="h-6 w-24" src="/logo.svg" />
             </Link>
             {helpCenter ? (
               <div className="flex items-center">

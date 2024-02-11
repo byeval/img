@@ -5,7 +5,7 @@ import va from "@vercel/analytics";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { FEATURES_LIST } from "./content";
-import { Github, LogoType, Twitter } from "./icons";
+import { Github, Twitter } from "./icons";
 import { MaxWidthWrapper } from "./max-width-wrapper";
 
 const navigation = {
@@ -39,23 +39,13 @@ export function Footer() {
   return (
     <footer className="z-10 border-t border-gray-200 bg-white/50 py-8 backdrop-blur-lg">
       <MaxWidthWrapper className="pt-10">
-        <div className="flex justify-between">
+        <div className="flex justify-between md:flex-row flex-col">
           <div className="space-y-8">
-            <Link
-              href={createHref("/")}
-              {...(domain !== "img.pt" && {
-                onClick: () => {
-                  va.track("Referred from custom domain", {
-                    domain,
-                    medium: `footer item (logo)`,
-                  });
-                },
-              })}
-            >
+            <Link href={createHref("/")}>
               <span className="sr-only">
                 {process.env.NEXT_PUBLIC_APP_NAME} Logo
               </span>
-              <LogoType className="h-7 text-gray-600" />
+              <img className="h7 w-24 text-gray-600" src="/logo.svg" />
             </Link>
             <p className="max-w-xs text-sm text-gray-500">
               Make your GPTs link short and readable, attract more clicks, and
@@ -63,7 +53,7 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-2">
               <a
-                href="https://twitter.com/dubdotco"
+                href="https://twitter.com/imgptai"
                 target="_blank"
                 rel="noreferrer"
                 className="group rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
@@ -73,7 +63,7 @@ export function Footer() {
               </a>
               <div className="h-8 border-l border-gray-200" />
               <a
-                href="https://github.com/dubinc/dub"
+                href="https://github.com/byeval/img.pt"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
@@ -83,7 +73,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-3 gap-20 xl:col-span-2 xl:mt-0">
+          <div className="mt-16 grid grid-cols-3 gap-16 xl:col-span-2 xl:mt-0">
             <div>
               <h3 className="text-sm font-semibold text-gray-900">Features</h3>
               <ul role="list" className="mt-4 space-y-4">
@@ -181,8 +171,7 @@ export function Footer() {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-sm leading-5 text-gray-500">
-            © {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME},
-            Inc.
+            © {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME}
           </p>
         </div>
       </MaxWidthWrapper>

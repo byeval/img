@@ -181,23 +181,23 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
             )}
           </div>
           <div className="flex flex-1 flex-col justify-between gap-2">
-            <div>
-              <h1 className="mb-2 text-2xl font-semibold leading-7">{name}</h1>
-              <h2 className="leading-6 text-gray-500">{description}</h2>
-            </div>
-            {numConversations >= 0 && (
-              <div className="flex gap-1">
-                <MessageCircleMore />
-                {numConversations}
+            <h1 className="mb-2 text-2xl font-semibold leading-7">{name}</h1>
+            <h2 className="leading-6 text-gray-500">{description}</h2>
+            <div className="flex items-center justify-between gap-1">
+              {numConversations >= 0 && (
+                <div className="flex gap-1">
+                  <MessageCircleMore className=" text-gray-500" />
+                  {numConversations}
+                </div>
+              )}
+              <div className="flex items-end justify-end">
+                <Link href={chatgptUrl} target="_blank">
+                  <button className="focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+                    Use {name}
+                  </button>
+                </Link>
               </div>
-            )}
-          </div>
-          <div className="flex items-end justify-end">
-            <a href={chatgptUrl} target="_blank">
-              <button className="focus-visible:ring-ring bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
-                Use {name}
-              </button>
-            </a>
+            </div>
           </div>
         </div>
         <div className="bg-card text-card-foreground space-y-4 rounded-lg border p-5 shadow-sm">
