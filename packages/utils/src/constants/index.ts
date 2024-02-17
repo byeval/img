@@ -1,5 +1,6 @@
 export * from "./cctlds";
 export * from "./countries";
+export * from "./preserved";
 export * from "./pricing";
 
 export const LOCALHOST_GEO_DATA = {

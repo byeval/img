@@ -10,6 +10,7 @@ import {
   API_HOSTNAMES,
   APP_HOSTNAMES,
   DEFAULT_REDIRECTS,
+  PRESERVED_PATHS,
 } from "@imgpt/utils";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import AdminMiddleware from "./lib/middleware/admin";
@@ -42,18 +43,12 @@ export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
     return ApiMiddleware(req);
   }
 
-  // for public stats pages (e.g. img.pt/stats/github)
-  if (key === "stats") {
-    return NextResponse.rewrite(new URL(`/${domain}${path}`, req.url));
-  }
-
   // default redirects for img.pt
   if (domain === "img.pt" && DEFAULT_REDIRECTS[key]) {
     return NextResponse.redirect(DEFAULT_REDIRECTS[key]);
   }
 
-  // for gpt store pages
-  if (key === "store") {
+  if (PRESERVED_PATHS.includes(key)) {
     return NextResponse.next();
   }
 

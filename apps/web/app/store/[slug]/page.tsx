@@ -37,7 +37,7 @@ export async function generateMetadata({
   } = gizmo;
 
   return {
-    title: name,
+    title: `${name} on imGPT Store`,
     description: [description, welcomeMessage].join(", "),
     keywords: [
       model,
@@ -47,12 +47,14 @@ export async function generateMetadata({
       "gpt store",
       "custom gpt",
       "gpt-3.5",
+      "gpt-4",
+      "gpt-5",
       "gpts",
     ],
     opengraph: {
       title: name,
       url: `https://img.pt/store/${slug}`,
-      siteName: "Im GPT Store",
+      siteName: `${name} on imGPT Store`,
       publishedTime: createdAt,
       images: profilePictureUrl,
       authors: [],
