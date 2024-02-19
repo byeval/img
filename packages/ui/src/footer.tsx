@@ -53,7 +53,7 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-2">
               <a
-                href="https://twitter.com/imgptai"
+                href="https://twitter.com/imGPTs"
                 target="_blank"
                 rel="noreferrer"
                 className="group rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
@@ -63,7 +63,7 @@ export function Footer() {
               </a>
               <div className="h-8 border-l border-gray-200" />
               <a
-                href="https://github.com/byeval/img.pt"
+                href="https://github.com/byeval/imG.PT"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
