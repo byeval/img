@@ -57,6 +57,15 @@ export async function queryGizmosByInventor({ inventorId }) {
     where: {
       inventorId,
     },
+    select: {
+      id: true,
+      slug: true,
+      name: true,
+      profilePictureUrl: true,
+      description: true,
+      numConversations: true,
+      inventor: true
+    }
   });
 
   return gizmos.map((gizmo) => ({

@@ -5,9 +5,7 @@ import { HOME_DOMAIN } from "@imgpt/utils";
 import Link from "next/link";
 import { ReactNode, Suspense } from "react";
 import UserDropdown from "@/ui/layout/user-dropdown";
-import ProjectSelect from "@/ui/layout/project-select";
 import NavTabs from "@/ui/layout/nav-tabs";
-import UpgradeBanner from "@/ui/layout/upgrade-banner";
 import Providers from "./providers";
 
 export const dynamic = "force-static";
@@ -26,8 +24,6 @@ export default function Layout({ children }: { children: ReactNode }) {
                 </Link>
                 <Divider className="h-8 w-8 text-gray-200 sm:ml-3" />
                 <div>Links</div>
-                {/* <ProjectSelect /> */}
-                {/* <UpgradeBanner /> */}
               </div>
               <div className="flex items-center space-x-6">
                 <a

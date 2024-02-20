@@ -40,16 +40,10 @@ import {
 import { toast } from "sonner";
 import { mutate } from "swr";
 import { useDebounce } from "use-debounce";
-import AndroidSection from "./android-section";
-import CommentsSection from "./comments-section";
 import ExpirationSection from "./expiration-section";
-import GeoSection from "./geo-section";
-import IOSSection from "./ios-section";
 import OGSection from "./og-section";
 import PasswordSection from "./password-section";
 import Preview from "./preview";
-import RewriteSection from "./rewrite-section";
-import UTMSection from "./utm-section";
 import TagsSection from "./tags-section";
 
 function AddEditLinkModal({
@@ -75,11 +69,7 @@ function AddEditLinkModal({
   const [generatingKey, setGeneratingKey] = useState(false);
   const [saving, setSaving] = useState(false);
 
-  const {
-    allActiveDomains: domains,
-    primaryDomain,
-    defaultDomains,
-  } = useDomains();
+  const { primaryDomain, defaultDomains } = useDomains();
 
   const [data, setData] = useState<LinkProps>(
     props ||
@@ -414,11 +404,7 @@ function AddEditLinkModal({
                     id={`url-${randomIdx}`}
                     type="url"
                     required
-                    placeholder={
-                      domains?.find(({ slug }) => slug === domain)
-                        ?.placeholder ||
-                      "https://img.pt/help/article/what-is-dub"
-                    }
+                    placeholder={"https://chat.openai.com/g/g-kCRn78kzD-imgpt"}
                     value={url}
                     autoFocus={!key}
                     autoComplete="off"
@@ -481,22 +467,9 @@ function AddEditLinkModal({
                   )}
                 </div>
                 <div className="relative mt-1 flex rounded-md shadow-sm">
-                  <select
-                    disabled={props && lockKey}
-                    value={domain}
-                    onChange={(e) => {
-                      setData({ ...data, domain: e.target.value });
-                    }}
-                    className={`${
-                      props && lockKey ? "cursor-not-allowed" : ""
-                    } w-40 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-5 text-sm text-gray-500 focus:border-gray-300 focus:outline-none focus:ring-0`}
-                  >
-                    {domains?.map(({ slug }) => (
-                      <option key={slug} value={slug}>
-                        {punycode.toUnicode(slug || "")}
-                      </option>
-                    ))}
-                  </select>
+                  <span className="flex w-20 items-center justify-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-5 text-sm text-gray-500">
+                    imG.PT
+                  </span>
                   <input
                     ref={keyRef}
                     type="text"
@@ -520,7 +493,7 @@ function AddEditLinkModal({
                           props && lockKey,
                       },
                     )}
-                    placeholder="github"
+                    placeholder="store"
                     value={key}
                     onChange={(e) => {
                       setKeyError(null);
@@ -564,18 +537,12 @@ function AddEditLinkModal({
 
             <div className="grid gap-5 px-4 md:px-16">
               {slug && <TagsSection {...{ props, data, setData }} />}
-              <CommentsSection {...{ props, data, setData }} />
-              <UTMSection {...{ props, data, setData }} />
               <OGSection
                 {...{ props, data, setData }}
                 generatingMetatags={generatingMetatags}
               />
-              <RewriteSection {...{ data, setData }} />
               <PasswordSection {...{ props, data, setData }} />
               <ExpirationSection {...{ props, data, setData }} />
-              <IOSSection {...{ props, data, setData }} />
-              <AndroidSection {...{ props, data, setData }} />
-              <GeoSection {...{ props, data, setData }} />
             </div>
 
             <div
