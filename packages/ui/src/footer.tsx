@@ -62,7 +62,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5 text-gray-600" />
               </a>
               <div className="h-8 border-l border-gray-200" />
-              <a
+              {/* <a
                 href="https://github.com/byeval/imG.PT"
                 target="_blank"
                 rel="noreferrer"
@@ -70,7 +70,7 @@ export function Footer() {
               >
                 <span className="sr-only">Github</span>
                 <Github className="h-5 w-5 text-gray-600" />
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="mt-16 grid grid-cols-3 gap-16 xl:col-span-2 xl:mt-0">
