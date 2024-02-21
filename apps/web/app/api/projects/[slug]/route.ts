@@ -58,7 +58,6 @@ export const PUT = withAuth(
     }
   },
   {
-    requiredRole: ["owner"],
   },
 );
 
@@ -69,6 +68,5 @@ export const DELETE = withAuth(
     return NextResponse.json(response);
   },
   {
-    requiredRole: ["owner"],
   },
 );

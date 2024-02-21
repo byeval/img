@@ -115,7 +115,6 @@ function ProjectList({
   projects: ProjectWithDomainProps[];
   setOpenPopover: (open: boolean) => void;
 }) {
-  const { setShowAddProjectModal } = useContext(ModalContext);
   const { domain, key } = useParams() as { domain?: string; key?: string };
   const pathname = usePathname();
 
@@ -173,7 +172,6 @@ function ProjectList({
         key="add"
         onClick={() => {
           setOpenPopover(false);
-          setShowAddProjectModal(true);
         }}
         className="flex w-full cursor-pointer items-center space-x-2 rounded-md p-2 transition-all duration-75 hover:bg-gray-100"
       >

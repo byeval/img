@@ -30,67 +30,56 @@ export const GET = withAuth(async ({ project }) => {
 });
 
 // PUT /api/projects/[slug]/users – update a user's role for a specific project
-export const PUT = withAuth(
-  async ({ req, project }) => {
-    const { userId, role } = await req.json();
-    if (!userId || !role) {
-      return new Response("Missing userId or role", { status: 400 });
-    }
-    const response = await prisma.projectUsers.update({
-      where: {
-        userId_projectId: {
-          projectId: project.id,
-          userId,
-        },
+export const PUT = withAuth(async ({ req, project }) => {
+  const { userId, role } = await req.json();
+  if (!userId || !role) {
+    return new Response("Missing userId or role", { status: 400 });
+  }
+  const response = await prisma.projectUsers.update({
+    where: {
+      userId_projectId: {
+        projectId: project.id,
+        userId,
       },
-      data: {
-        role,
-      },
-    });
-    return NextResponse.json(response);
-  },
-  {
-    requiredRole: ["owner"],
-  },
-);
+    },
+    data: {
+      role,
+    },
+  });
+  return NextResponse.json(response);
+}, {});
 
 // DELETE /api/projects/[slug]/users – remove a user from a project
 
-export const DELETE = withAuth(
-  async ({ searchParams, project }) => {
-    const { userId } = searchParams;
-    if (!userId) {
-      return new Response("Missing userId", { status: 400 });
-    }
-    const projectUser = await prisma.projectUsers.findUnique({
-      where: {
-        userId_projectId: {
-          projectId: project.id,
-          userId,
-        },
+export const DELETE = withAuth(async ({ searchParams, project }) => {
+  const { userId } = searchParams;
+  if (!userId) {
+    return new Response("Missing userId", { status: 400 });
+  }
+  const projectUser = await prisma.projectUsers.findUnique({
+    where: {
+      userId_projectId: {
+        projectId: project.id,
+        userId,
       },
-      select: {
-        role: true,
+    },
+    select: {
+      role: true,
+    },
+  });
+  if (projectUser?.role === "owner") {
+    return new Response(
+      "Cannot remove owner from project. Please transfer ownership to another user first.",
+      { status: 400 },
+    );
+  }
+  const response = await prisma.projectUsers.delete({
+    where: {
+      userId_projectId: {
+        projectId: project.id,
+        userId,
       },
-    });
-    if (projectUser?.role === "owner") {
-      return new Response(
-        "Cannot remove owner from project. Please transfer ownership to another user first.",
-        { status: 400 },
-      );
-    }
-    const response = await prisma.projectUsers.delete({
-      where: {
-        userId_projectId: {
-          projectId: project.id,
-          userId,
-        },
-      },
-    });
-    return NextResponse.json(response);
-  },
-  {
-    requiredRole: ["owner"],
-    allowSelf: true,
-  },
-);
+    },
+  });
+  return NextResponse.json(response);
+}, {});

@@ -23,6 +23,5 @@ export const POST = withAuth(
     return NextResponse.json(response);
   },
   {
-    requiredRole: ["owner"],
   },
 );
