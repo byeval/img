@@ -61,19 +61,15 @@ export const withAuth =
     handler: WithAuthHandler,
     {
       requiredPlan = ["free", "pro", "business", "enterprise"], // if the action needs a specific plan
-      requiredRole = ["owner", "member"],
       needNotExceededClicks, // if the action needs the user to not have exceeded their clicks usage
       needNotExceededLinks, // if the action needs the user to not have exceeded their links usage
       allowAnonymous, // special case for /api/links (POST /api/links) – allow no session
-      allowSelf, // special case for removing yourself from a project
       skipLinkChecks, // special case for /api/links/exists – skip link checks
     }: {
       requiredPlan?: Array<PlanProps>;
-      requiredRole?: Array<"owner" | "member">;
       needNotExceededClicks?: boolean;
       needNotExceededLinks?: boolean;
       allowAnonymous?: boolean;
-      allowSelf?: boolean;
       skipLinkChecks?: boolean;
     } = {},
   ) =>
@@ -83,33 +79,12 @@ export const withAuth =
   ) => {
     const searchParams = getSearchParams(req.url);
     const { linkId } = params || {};
-    const slug = params?.slug || searchParams.projectSlug;
 
     const domain = params?.domain || searchParams.domain;
     const key = searchParams.key;
 
     let session: Session | undefined;
     let headers = {};
-
-    // if there's no projectSlug defined
-    if (!slug) {
-      if (allowAnonymous) {
-        // @ts-expect-error
-        return handler({
-          req,
-          params: params || {},
-          searchParams,
-          headers,
-        });
-      } else {
-        return new Response(
-          "Project slug not found. Did you forget to include a `projectSlug` query parameter?",
-          {
-            status: 400,
-          },
-        );
-      }
-    }
 
     const authorizationHeader = req.headers.get("Authorization");
     if (authorizationHeader) {
@@ -199,9 +174,13 @@ export const withAuth =
     }
 
     const [project, link] = (await Promise.all([
-      prisma.project.findUnique({
+      prisma.project.findFirst({
         where: {
-          slug,
+          users: {
+            some: {
+              userId: session.user.id,
+            },
+          },
         },
         select: {
           id: true,
@@ -303,19 +282,6 @@ export const withAuth =
           headers,
         });
       }
-    }
-
-    // project role checks (enterprise only)
-    if (
-      requiredRole &&
-      project.plan === "enterprise" &&
-      !requiredRole.includes(project.users[0].role) &&
-      !(allowSelf && searchParams.userId === session.user.id)
-    ) {
-      return new Response("Unauthorized: Insufficient permissions.", {
-        status: 403,
-        headers,
-      });
     }
 
     // clicks usage overage checks

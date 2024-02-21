@@ -120,7 +120,6 @@ model Project {
   id                 String          @id @default(cuid())
   name               String
   slug               String          @unique
-  logo               String?
 
   plan               String          @default("free")
   stripeId           String?         @unique // Stripe subscription ID
@@ -143,7 +142,7 @@ model Project {
 
   createdAt          DateTime        @default(now())
   updatedAt          DateTime        @updatedAt
-  metadata           Json?           @default("{\"defaultDomains\":[\"dub.sh\",\"chatg.pt\",\"spti.fi\",\"amzn.id\"]}")
+  metadata           Json?           @default("{\"defaultDomains\":[\"imG.PT\"]}")
 }
 
 model ProjectInvite {
@@ -215,7 +214,7 @@ model Link {
   id        String    @id @default(cuid())
   domain    String // domain of the link (e.g. img.pt) – also stored on Redis
   key       String // key of the link (e.g. /github) – also stored on Redis
-  url       String    @db.LongText // target url (e.g. https://github.com/dubinc/dub) – also stored on Redis
+  url       String    @db.LongText // target url (e.g. https://github.com/byeval/imG.PT) – also stored on Redis
   archived  Boolean   @default(false) // whether the link is archived or not
   expiresAt DateTime? // when the link expires – stored on Redis via ttl
   password  String? // password to access the link
@@ -229,7 +228,7 @@ model Link {
   utm_source   String? // UTM source for the link (e.g. youtube.com)
   utm_medium   String? // UTM medium for the link (e.g. social)
   utm_campaign String? // UTM campaign for the link (e.g. summer-sale)
-  utm_term     String? // UTM term for the link (e.g. dub)
+  utm_term     String? // UTM term for the link (e.g. gpt)
   utm_content  String? // UTM content for the link (e.g. description)
 
   // Link cloaking/masking via rewrite

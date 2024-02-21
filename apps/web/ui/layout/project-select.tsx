@@ -2,7 +2,6 @@
 
 import { PlanProps, ProjectWithDomainProps } from "@/lib/types";
 import { ModalContext } from "@/ui/modals/provider";
-import PlanBadge from "@/ui/projects/plan-badge";
 import { Popover, Tick } from "@imgpt/ui";
 import { GOOGLE_FAVICON_URL, SHORT_DOMAIN } from "@imgpt/utils";
 import { ChevronsUpDown, PlusCircle } from "lucide-react";
@@ -90,7 +89,6 @@ export default function ProjectSelect() {
               <span className="inline-block max-w-[100px] truncate text-sm font-medium sm:max-w-[200px]">
                 {selected.name}
               </span>
-              {selected.slug !== "/" && <PlanBadge plan={selected.plan} />}
             </div>
           </div>
           <ChevronsUpDown

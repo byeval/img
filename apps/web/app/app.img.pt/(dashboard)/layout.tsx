@@ -1,6 +1,5 @@
 import { constructMetadata } from "@imgpt/utils";
-import { Divider } from "@/ui/shared/icons";
-import { Logo, MaxWidthWrapper } from "@imgpt/ui";
+import { MaxWidthWrapper } from "@imgpt/ui";
 import { HOME_DOMAIN } from "@imgpt/utils";
 import Link from "next/link";
 import { ReactNode, Suspense } from "react";
@@ -20,10 +19,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <Link href="/">
-                  <Logo className="h-8 w-8 transition-all duration-75 active:scale-95" />
+                  <img className="h-6 w-24" src="/logo.svg" />
                 </Link>
-                <Divider className="h-8 w-8 text-gray-200 sm:ml-3" />
-                <div>Links</div>
               </div>
               <div className="flex items-center space-x-6">
                 <a

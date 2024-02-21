@@ -40,11 +40,8 @@ import {
 import { toast } from "sonner";
 import { mutate } from "swr";
 import { useDebounce } from "use-debounce";
-import ExpirationSection from "./expiration-section";
 import OGSection from "./og-section";
-import PasswordSection from "./password-section";
 import Preview from "./preview";
-import TagsSection from "./tags-section";
 
 function AddEditLinkModal({
   showAddEditLinkModal,
@@ -536,13 +533,10 @@ function AddEditLinkModal({
             </div>
 
             <div className="grid gap-5 px-4 md:px-16">
-              {slug && <TagsSection {...{ props, data, setData }} />}
               <OGSection
                 {...{ props, data, setData }}
                 generatingMetatags={generatingMetatags}
               />
-              <PasswordSection {...{ props, data, setData }} />
-              <ExpirationSection {...{ props, data, setData }} />
             </div>
 
             <div

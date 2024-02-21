@@ -1,22 +1,17 @@
 "use client";
 
-import useProject from "@/lib/swr/use-project";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function NavTabs() {
   const pathname = usePathname();
-  const { slug } = useParams() as { slug?: string };
-  const { error } = useProject();
 
   const tabs = [
-    { name: "Links", href: `/${slug}` },
-    { name: "Analytics", href: `/${slug}/analytics` },
-    { name: "Settings", href: `/${slug}/settings` },
+    { name: "Links", href: `/` },
+    { name: "Analytics", href: `/analytics` },
+    { name: "Billing", href: `/billing` },
   ];
-
-  if (!slug || error) return null;
 
   return (
     <div className="scrollbar-hide mb-[-3px] flex h-12 items-center justify-start space-x-2 overflow-x-auto">

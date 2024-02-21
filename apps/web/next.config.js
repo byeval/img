@@ -1,13 +1,3 @@
-const REDIRECT_SEGMENTS = [
-  "pricing",
-  "blog",
-  "help",
-  "changelog",
-  "tools",
-  "stats",
-  "_static",
-];
-
 const path = require("path");
 const { NormalModuleReplacementPlugin } = require("webpack");
 
