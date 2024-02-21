@@ -220,7 +220,6 @@ export async function banUser(data: FormData) {
             select: {
               id: true,
               slug: true,
-              logo: true,
               stripeId: true,
             },
           },
