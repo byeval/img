@@ -1,4 +1,4 @@
-import { queryGizmosByInventor, searchGizmos } from "@/lib/api/gizmos";
+import { queryGizmosByInventor } from "@/lib/api/gizmos";
 import { getInventor } from "@/lib/api/inventors";
 import GizmoCard from "@/ui/store/gizmo-card";
 import { BreadcrumbList, Person, WithContext } from "schema-dts";
@@ -78,7 +78,7 @@ export default async function Inventor({ params }: { params: { id: string } }) {
         }}
       />
       <h1 className="mb-2 text-2xl font-semibold leading-7">
-        GPTs Created by {name || "anonymous"}
+        GPTs Created by {name || "anonymous"} on GPT store.
       </h1>
       <div className="">
         <div className="grid grid-cols-1 gap-x-1.5 gap-y-1 md:grid-cols-2 md:gap-x-2 md:gap-y-1.5 lg:grid-cols-3 lg:gap-x-3 lg:gap-y-2.5">

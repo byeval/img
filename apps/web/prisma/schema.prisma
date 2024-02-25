@@ -46,6 +46,8 @@ model Gizmo {
   platform String
   model String
   inventor Inventor? @relation(fields: [inventorId], references: [id])
+
+  @@index(inventorId)
 }
 
 model User {
