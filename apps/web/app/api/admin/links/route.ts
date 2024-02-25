@@ -7,14 +7,12 @@ import { GPT_DOMAINS, LEGAL_USER_ID } from "@imgpt/utils";
 export const GET = withAdmin(async ({ searchParams }) => {
   const {
     domain,
-    tagId,
     search,
     sort = "createdAt",
     page,
     userId,
   } = searchParams as {
     domain?: string;
-    tagId?: string;
     search?: string;
     sort?: "createdAt" | "clicks" | "lastClicked";
     page?: string;

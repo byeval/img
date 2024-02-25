@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function useLinksCount({
   groupBy,
 }: {
-  groupBy?: "domain" | "tagId";
+  groupBy?: "domain";
 } = {}) {
   const { getQueryString } = useRouterStuff();
 

@@ -54,7 +54,6 @@ export interface ProjectProps {
   linksUsage: number;
   linksLimit: number;
   domainsLimit: number;
-  tagsLimit: number;
   usersLimit: number;
   plan: PlanProps;
   stripeId?: string;

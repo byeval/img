@@ -49,16 +49,6 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
               },
             },
             {
-              name: "tagId",
-              description: "The tag ID to filter the links by.",
-              in: "query",
-              required: false,
-              schema: {
-                description: "The tag ID to filter the links by.",
-                type: "string",
-              },
-            },
-            {
               name: "search",
               description:
                 "The search term to filter the links by. The search term will be matched against the short link slug and the destination url.",
@@ -695,14 +685,6 @@ export function GET(): NextResponse<OpenAPIV3.Document> {
               description:
                 "Whether the short link's stats are publicly accessible.",
               default: false,
-            },
-            tagId: {
-              type: "string",
-              format: "cuid",
-              description:
-                "The unique id of the tag assigned to the short link.",
-              default: null,
-              nullable: true,
             },
             comments: {
               type: "string",

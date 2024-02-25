@@ -27,7 +27,6 @@ import { getLinkViaEdge } from "../planetscale";
 export async function getLinksForProject({
   projectId,
   domain,
-  tagId,
   search,
   sort = "createdAt",
   page,
@@ -36,7 +35,6 @@ export async function getLinksForProject({
 }: {
   projectId: string;
   domain?: string;
-  tagId?: string;
   search?: string;
   sort?: "createdAt" | "clicks" | "lastClicked"; // descending for all
   page?: string;
@@ -58,7 +56,6 @@ export async function getLinksForProject({
           },
         ],
       }),
-      ...(tagId && { tagId }),
       ...(userId && { userId }),
     },
     include: {
@@ -91,11 +88,10 @@ export async function getLinksCount({
   projectId: string;
   userId?: string | null;
 }) {
-  let { groupBy, search, domain, tagId, showArchived } = searchParams as {
-    groupBy?: "domain" | "tagId";
+  let { groupBy, search, domain, showArchived } = searchParams as {
+    groupBy?: "domain";
     search?: string;
     domain?: string;
-    tagId?: string;
     showArchived?: boolean;
   };
 
@@ -121,17 +117,6 @@ export async function getLinksCount({
           groupBy !== "domain" && {
             domain,
           }),
-        // when filtering by tagId, only filter by tagId if the filter group is not "Tags"
-        ...(tagId &&
-          groupBy !== "tagId" && {
-            tagId,
-          }),
-        // for the "Tags" filter group, only count links that have a tagId
-        ...(groupBy === "tagId" && {
-          NOT: {
-            tagId: null,
-          },
-        }),
       },
       _count: true,
       orderBy: {
@@ -157,7 +142,6 @@ export async function getLinksCount({
           ],
         }),
         ...(domain && { domain }),
-        ...(tagId && { tagId }),
       },
     });
   }

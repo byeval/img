@@ -122,8 +122,9 @@ export default async function Gizmo({ params }: { params: { slug: string } }) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: numConversations > 100 ? "4" : "3",
-      reviewCount: numConversations > 100 ? "100" : "10",
-      worstRating: "1",
+      ratingCount: numConversations > 100 ? "100" : "10",
+      worstRating: 1,
+      bestRating: 5,
     },
   };
 

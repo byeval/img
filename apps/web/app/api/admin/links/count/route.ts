@@ -5,11 +5,10 @@ import { GPT_DOMAINS, LEGAL_USER_ID } from "@imgpt/utils";
 
 // GET /api/links – get all user links
 export const GET = withAdmin(async ({ searchParams }) => {
-  let { groupBy, search, domain, tagId } = searchParams as {
-    groupBy?: "domain" | "tagId";
+  let { groupBy, search, domain } = searchParams as {
+    groupBy?: "domain";
     search?: string;
     domain?: string;
-    tagId?: string;
   };
 
   let response;
@@ -69,7 +68,6 @@ export const GET = withAdmin(async ({ searchParams }) => {
                 in: GPT_DOMAINS.map((domain) => domain.slug),
               },
             }),
-        ...(tagId && { tagId }),
       },
     });
   }

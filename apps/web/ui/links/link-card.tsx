@@ -2,7 +2,6 @@ import useDomains from "@/lib/swr/use-domains";
 import useProject from "@/lib/swr/use-project";
 import useTags from "@/lib/swr/use-tags";
 import { UserProps } from "@/lib/types";
-import TagBadge from "@/ui/links/tag-badge";
 import { useAddEditLinkModal } from "@/ui/modals/add-edit-link-modal";
 import { useArchiveLinkModal } from "@/ui/modals/archive-link-modal";
 import { useDeleteLinkModal } from "@/ui/modals/delete-link-modal";
@@ -66,12 +65,10 @@ export default function LinkCard({
     createdAt,
     lastClicked,
     archived,
-    tagId,
     comments,
     user,
   } = props;
   const { tags } = useTags();
-  const tag = useMemo(() => tags?.find((t) => t.id === tagId), [tags, tagId]);
 
   const apexDomain = getApexDomain(url);
 
@@ -323,20 +320,6 @@ export default function LinkCard({
                     <MessageCircle className="h-3.5 w-3.5 text-gray-700" />
                   </button>
                 </Tooltip>
-              )}
-              {tag?.color && (
-                <button
-                  onClick={() => {
-                    queryParams({
-                      set: {
-                        tagId: tag.id,
-                      },
-                    });
-                  }}
-                  className="transition-all duration-75 hover:scale-105 active:scale-100"
-                >
-                  <TagBadge {...tag} withIcon />
-                </button>
               )}
             </div>
             <div className="flex max-w-fit items-center space-x-1">
