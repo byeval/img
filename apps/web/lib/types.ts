@@ -1,5 +1,3 @@
-import { DirectorySyncProviders } from "@boxyhq/saml-jackson";
-
 export { type Link as LinkProps } from "@prisma/client";
 export interface SimpleLinkProps {
   domain: string;
@@ -112,28 +110,4 @@ export interface RedisDomainProps {
   rewrite?: boolean;
   iframeable?: boolean;
   projectId: string;
-}
-
-export interface BitlyGroupProps {
-  guid: string;
-  bsds: string[]; // custom domains
-  tags: string[];
-}
-
-export interface ImportedDomainCountProps {
-  id: number;
-  domain: string;
-  links: number;
-}
-
-export interface SAMLProviderProps {
-  name: string;
-  logo: string;
-  saml: "okta" | "azure" | "google";
-  samlModalCopy: string;
-  scim: keyof typeof DirectorySyncProviders;
-  scimModalCopy: {
-    url: string;
-    token: string;
-  };
 }

@@ -17,8 +17,7 @@ export default async function AppMiddleware(req: NextRequest) {
   if (
     !session?.email &&
     path !== "/login" &&
-    path !== "/register" &&
-    path !== "/auth/saml"
+    path !== "/register"
   ) {
     return NextResponse.redirect(
       new URL(

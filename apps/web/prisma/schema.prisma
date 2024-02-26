@@ -49,6 +49,8 @@ model Gizmo {
   inventor Inventor? @relation(fields: [inventorId], references: [id])
 
   @@index(inventorId)
+  @@index(slug)
+  @@index(featured)
 }
 
 model User {
